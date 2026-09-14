@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Green Shop | Eco-Friendly Disposable Tableware</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50:  '#f4f9ee',
+            100: '#e7f3d8',
+            200: '#d3ebae',
+            300: '#b9df86',
+            400: '#9ad05a',
+            500: '#5CA52A',
+            600: '#4d8f24',
+            700: '#5CA52A',
+            800: '#315d1c',
+            900: '#254716',
+            950: '#18300f',
+          },
+          cream: '#F5F5F5',
+          ink: '#2C2C2C',
+        },
+        fontFamily: {
+          heading: ['Montserrat', 'sans-serif'],
+          body: ['Open Sans', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'Open Sans', sans-serif; color: #2C2C2C; }
+  h1,h2,h3,h4,.font-heading { font-family: 'Montserrat', sans-serif; }
+  .carousel-track { scroll-behavior: smooth; }
+  .carousel-track::-webkit-scrollbar { display: none; }
+  .carousel-track { -ms-overflow-style: none; scrollbar-width: none; }
+  :focus-visible { outline: 2px solid #5CA52A; outline-offset: 2px; }
+</style>
+</head>
+<body class="bg-white text-ink antialiased">
+
+<!-- ============ HEADER ============ -->
+<header class="w-full">
+
+  <!-- Top Bar -->
+  <div class="bg-brand-700 text-white text-xs font-body">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-center gap-6 flex-wrap relative">
+      <nav class="flex items-center gap-6 flex-wrap justify-center">
+        <a href="#" class="hover:text-brand-100 transition-colors">About Us</a>
+        <a href="#" class="hover:text-brand-100 transition-colors">Sustainability</a>
+        <a href="#" class="hover:text-brand-100 transition-colors">Carbon Calculator</a>
+        <a href="#" class="hover:text-brand-100 transition-colors">Catalogue</a>
+        <a href="#" class="hover:text-brand-100 transition-colors">FAQ</a>
+        <a href="#" class="hover:text-brand-100 transition-colors">Blog</a>
+      </nav>
+      <!-- <div class="hidden sm:flex items-center gap-1 absolute right-4">
+        <svg width="18" height="12" viewBox="0 0 60 40" aria-label="United Kingdom flag">
+          <rect width="60" height="40" fill="#5CA52A"/>
+          <path d="M0,0 L60,40 M60,0 L0,40" stroke="#f4f9ee" stroke-width="6"/>
+          <path d="M30,0 V40 M0,20 H60" stroke="#f4f9ee" stroke-width="10"/>
+          <path d="M30,0 V40 M0,20 H60" stroke="#254716" stroke-width="4"/>
+        </svg>
+        <span>EN</span>
+      </div> -->
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <div class="bg-white border-b border-brand-100">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-center gap-6">
+      <a href="index.html" class="flex items-center gap-2 shrink-0">
+        <div class="w-10 h-10 rounded-full bg-[#5CA52A] flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf w-6 h-6 text-white"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg></div>
+        <div>
+          <div class="font-heading text-[20px] font-bold text-[#1C1C1C] leading-tight">Abdale Shop</div>
+          <div class="text-[10px] text-[#888888]">Perfectly Sized for Success.</div>
+        </div>
+      </a>
+
+      <div class="hidden md:flex flex-1 justify-center max-w-2xl">
+        <div class="relative w-full max-w-xl">
+          <input type="text" placeholder="Search for plates, bowls, cutlery..." class="w-full border border-brand-200 rounded-full py-2.5 pl-5 pr-11 text-sm focus:border-brand-500">
+          <button aria-label="Search" class="absolute right-1 top-1/2 -translate-y-1/2 bg-brand-500 hover:bg-brand-600 rounded-full w-9 h-9 flex items-center justify-center transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-5 ml-auto md:ml-0">
+        <button aria-label="Account" class="text-brand-800 hover:text-brand-500 transition-colors cursor-pointer" onclick="window.location.href='signup.html'">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-6 8-6s8 2 8 6"/></svg>
+        </button>
+        <button aria-label="Cart" class="relative text-brand-800 hover:text-brand-500 transition-colors cursor-pointer" onclick="window.location.href='cart.html'">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.5 3h2l2.6 12.2a2 2 0 002 1.6h8.4a2 2 0 002-1.6L21 8H6"/></svg>
+          <span class="absolute -top-2 -right-2 bg-brand-500 text-white text-[10px] font-semibold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Secondary Nav -->
+    <div class="bg-brand-50 border-t border-brand-100">
+      <div class="max-w-7xl mx-auto px-4 py-2">
+        <div class="md:hidden flex justify-start">
+          <button id="mobile-menu-toggle" aria-label="Toggle menu" class="flex items-center justify-center w-11 h-11 rounded-full border border-brand-200 bg-white text-brand-700 hover:bg-brand-100 transition-colors">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M3 6h18M3 12h18M3 18h18"/>
+            </svg>
+          </button>
+        </div>
+
+        <nav id="secondary-nav" class="hidden md:flex items-center justify-center gap-7 overflow-x-auto text-sm font-medium text-brand-800 whitespace-nowrap">
+          
+          <a href="#" class="py-3 hover:text-brand-500 transition-colors">Bowls</a>
+          <a href="#" class="py-3 hover:text-brand-500 transition-colors">Calmshells</a>
+          <!-- <a href="#" class="py-3 text-brand-600 font-semibold hover:text-brand-700 transition-colors">Calmshells</a> -->
+          <a href="#" class="py-3 flex items-center gap-1 hover:text-brand-500 transition-colors">Mealtray
+          </a>
+          <a href="#" class="py-3 flex items-center gap-1 hover:text-brand-500 transition-colors">Paper Cups
+          </a>
+          <a href="#" class="py-3 flex items-center gap-1 hover:text-brand-500 transition-colors">Round Plates
+          </a>
+          <a href="#" class="py-3 flex items-center gap-1 hover:text-brand-500 transition-colors">Sipper Lids
+          </a>
+          <a href="#" class="py-3 hover:text-brand-500 transition-colors">Cutleries</a>
+        </nav>
+
+        <nav id="mobile-secondary-nav" class="hidden md:hidden flex-col items-start gap-1 pt-3 pb-1 text-sm font-medium text-brand-800">
+          <a href="#" class="py-2 w-full hover:text-brand-500 transition-colors">Bowls</a>
+          <a href="#" class="py-2 w-full text-brand-600 font-semibold hover:text-brand-700 transition-colors">Calmshells</a>
+          <a href="#" class="py-2 w-full hover:text-brand-500 transition-colors">Mealtray</a>
+          <a href="#" class="py-2 w-full hover:text-brand-500 transition-colors">Paper Cups</a>
+          <a href="#" class="py-2 w-full hover:text-brand-500 transition-colors">Round Plates</a>
+          <a href="#" class="py-2 w-full hover:text-brand-500 transition-colors">Sipper Lids</a>
+          <a href="#" class="py-2 w-full hover:text-brand-500 transition-colors">Cutleries</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="relative bg-gradient-to-br from-brand-700 via-brand-600 to-brand-500 overflow-hidden">
+  <!-- <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 20% 30%, white 0, transparent 45%), radial-gradient(circle at 80% 70%, white 0, transparent 40%);"></div> -->
+  <div class="absolute inset-0 opacity-20" style="background-image: url('tb.jpg');"></div>
+  <div class="max-w-7xl mx-auto px-4 py-24 md:py-32 relative text-center">
+    <h1 class="font-heading font-extrabold text-white text-3xl sm:text-4xl md:text-5xl leading-tight max-w-3xl mx-auto">Stock Up for the Rest of Summer</h1>
+    <p class="text-brand-50 mt-4 max-w-lg mx-auto text-base md:text-lg">Compostable, plant-based tableware for every outdoor gathering — save on best-selling ranges while stock lasts.</p>
+    <a href="#featured-products" class="inline-block mt-8 bg-white text-brand-700 hover:bg-brand-50 font-heading font-semibold px-8 py-3 rounded-full transition-colors shadow-sm">Shop Sale</a>
+  </div>
+</section>
+
+<!-- ============ CATEGORY STRIP ============ -->
+<section class="border-b border-brand-100" hidden>
+  <div class="max-w-7xl mx-auto px-4 py-8 relative">
+    <div class="flex items-center gap-3">
+      <button aria-label="Scroll categories left" onclick="document.getElementById('cat-track').scrollBy({left:-240,behavior:'smooth'})" class="hidden sm:flex shrink-0 w-9 h-9 rounded-full border border-brand-200 items-center justify-center text-brand-700 hover:bg-brand-50 transition-colors">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div id="cat-track" class="carousel-track flex gap-8 overflow-x-auto flex-1 py-1">
+        <!-- category items -->
+      </div>
+      <button aria-label="Scroll categories right" onclick="document.getElementById('cat-track').scrollBy({left:240,behavior:'smooth'})" class="hidden sm:flex shrink-0 w-9 h-9 rounded-full border border-brand-200 items-center justify-center text-brand-700 hover:bg-brand-50 transition-colors">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED LARGE GRID ============ -->
+<section class="max-w-7xl mx-auto px-4 py-14" hidden> 
+  <div class="grid md:grid-cols-3 gap-6" id="featured-grid"></div>
+</section>
+
+<!-- ============ SERVICE FEATURE BAR ============ -->
+<section class="bg-brand-50 py-10 border-y border-brand-100">
+  <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8" id="service-bar"></div>
+</section>
+
+<!-- ============ FEATURED PRODUCTS ============ -->
+<section id="featured-products" class="max-w-7xl mx-auto px-4 py-16">
+  <div class="flex items-end justify-between mb-8">
+    <h2 class="font-heading font-bold text-2xl md:text-3xl text-brand-800">Featured Products</h2>
+    <div class="hidden sm:flex gap-2">
+      <button aria-label="Previous products" onclick="document.getElementById('featured-track').scrollBy({left:-280,behavior:'smooth'})" class="w-9 h-9 rounded-full border border-brand-200 flex items-center justify-center text-brand-700 hover:bg-brand-50 transition-colors">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button aria-label="Next products" onclick="document.getElementById('featured-track').scrollBy({left:280,behavior:'smooth'})" class="w-9 h-9 rounded-full border border-brand-200 flex items-center justify-center text-brand-700 hover:bg-brand-50 transition-colors">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="featured-track" class="carousel-track flex md:grid md:grid-cols-4 gap-6 overflow-x-auto cursor-pointer" onclick="window.location.href='product.html'"></div>
+</section>
+
+<!-- ============ BIG BANNER CTA ============ -->
+<!-- <section class="bg-brand-900">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 items-stretch">
+    <div class="h-64 md:h-auto bg-gradient-to-br from-brand-600 to-brand-800 flex items-center justify-center">
+      <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#f2f8f1" stroke-width="1.2"><path d="M4 10h16M6 10V6a2 2 0 012-2h8a2 2 0 012 2v4M4 10l1 9a2 2 0 002 2h10a2 2 0 002-2l1-9"/></svg>
+    </div>
+    <div class="px-8 py-14 md:py-0 flex flex-col justify-center text-white">
+      <h2 class="font-heading font-bold text-2xl md:text-3xl mb-4">Try Before You Buy</h2>
+      <p class="text-brand-100 max-w-md mb-6">Not sure which range suits your event? Order a curated sample pack of our best-selling plates, bowls and cutlery before committing to a full case.</p>
+      <a href="#" class="inline-block w-fit bg-brand-500 hover:bg-brand-400 font-heading font-semibold px-7 py-3 rounded-full transition-colors">Order Now</a>
+    </div>
+  </div>
+</section> -->
+
+<!-- ============ SUSTAINABILITY + REVIEWS ============ -->
+<section class="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-3 gap-12">
+  <div class="md:col-span-2">
+    <h2 class="font-heading font-bold text-2xl md:text-3xl text-brand-800 mb-4">Environmental Accreditations</h2>
+    <p class="text-sm text-gray-600 max-w-2xl mb-8">Every product we sell is independently assessed against strict environmental standards, from responsible forestry to verified carbon offsetting, so you can serve with a clear conscience.</p>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4" id="accreditations"></div>
+  </div>
+  <aside class="bg-brand-50 rounded-2xl p-7 h-fit">
+    <div class="font-heading font-extrabold text-4xl text-brand-700">4.85</div>
+    <div class="flex gap-1 my-2" id="avg-stars"></div>
+    <p class="text-sm text-gray-600">average rating from over 12,400 verified reviews</p>
+    <div class="mt-6 space-y-2" id="rating-bars"></div>
+  </aside>
+</section>
+
+<!-- ============ CUSTOMER REVIEWS ============ -->
+<section class="bg-brand-50 py-16 border-y border-brand-100">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex items-end justify-between mb-8">
+      <h2 class="font-heading font-bold text-2xl md:text-3xl text-brand-800">What Our Customers Say</h2>
+      <div class="hidden sm:flex gap-2">
+        <button aria-label="Previous reviews" onclick="document.getElementById('review-track').scrollBy({left:-320,behavior:'smooth'})" class="w-9 h-9 rounded-full border border-brand-200 bg-white flex items-center justify-center text-brand-700 hover:bg-brand-100 transition-colors">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button aria-label="Next reviews" onclick="document.getElementById('review-track').scrollBy({left:320,behavior:'smooth'})" class="w-9 h-9 rounded-full border border-brand-200 bg-white flex items-center justify-center text-brand-700 hover:bg-brand-100 transition-colors">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="review-track" class="carousel-track flex gap-5 overflow-x-auto"></div>
+    <div class="flex justify-center gap-1.5 mt-6" id="review-dots"></div>
+  </div>
+</section>
+
+<!-- ============ MOST POPULAR PRODUCTS ============ -->
+<section class="max-w-7xl mx-auto px-4 py-16">
+  <div class="flex items-end justify-between mb-8">
+    <h2 class="font-heading font-bold text-2xl md:text-3xl text-brand-800">Most Popular Products</h2>
+    <div class="hidden sm:flex gap-2">
+      <button aria-label="Previous popular products" onclick="document.getElementById('popular-track').scrollBy({left:-280,behavior:'smooth'})" class="w-9 h-9 rounded-full border border-brand-200 flex items-center justify-center text-brand-700 hover:bg-brand-50 transition-colors">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button aria-label="Next popular products" onclick="document.getElementById('popular-track').scrollBy({left:280,behavior:'smooth'})" class="w-9 h-9 rounded-full border border-brand-200 flex items-center justify-center text-brand-700 hover:bg-brand-50 transition-colors">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="popular-track" class="carousel-track flex md:grid md:grid-cols-4 gap-6 overflow-x-auto"></div>
+</section>
+
+<!-- ============ NEW PRODUCTS ============ -->
+<section class="bg-brand-50 py-16 border-y border-brand-100">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex items-end justify-between mb-8">
+      <h2 class="font-heading font-bold text-2xl md:text-3xl text-brand-800">New Products</h2>
+      <div class="hidden sm:flex gap-2">
+        <button aria-label="Previous new products" onclick="document.getElementById('new-track').scrollBy({left:-280,behavior:'smooth'})" class="w-9 h-9 rounded-full border border-brand-200 bg-white flex items-center justify-center text-brand-700 hover:bg-brand-100 transition-colors">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button aria-label="Next new products" onclick="document.getElementById('new-track').scrollBy({left:280,behavior:'smooth'})" class="w-9 h-9 rounded-full border border-brand-200 bg-white flex items-center justify-center text-brand-700 hover:bg-brand-100 transition-colors">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="new-track" class="carousel-track flex md:grid md:grid-cols-4 gap-6 overflow-x-auto"></div>
+  </div>
+</section>
+
+<!-- ============ BLOG ============ -->
+<section class="max-w-7xl mx-auto px-4 py-16">
+  <h2 class="font-heading font-bold text-2xl md:text-3xl text-brand-800 mb-8">Explore Our Blog</h2>
+  <div class="grid md:grid-cols-3 gap-6" id="blog-grid"></div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-brand-950 text-brand-100">
+  <div class="max-w-7xl mx-auto px-4 py-14 grid sm:grid-cols-2 md:grid-cols-5 gap-10">
+    <div>
+      <h3 class="font-heading font-semibold text-white mb-4">Info</h3>
+      <ul class="space-y-2 text-sm">
+        <li>Abdale Shop HQ, United States</li>
+        <li>hello@abdaleshop.com</li>
+        <li>1-800-XXX-XXXX</li>
+        <li>Mon&ndash;Fri, 9am&ndash;5pm</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-heading font-semibold text-white mb-4">Navigate</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Sustainability</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Carbon Calculator</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-heading font-semibold text-white mb-4">Categories</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:text-white transition-colors">Plates</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Bowls</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Serving Trays</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Cutlery &amp; More</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-heading font-semibold text-white mb-4">Useful Pages</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Shipping &amp; Returns</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Order Samples</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-heading font-semibold text-white mb-4">Subscribe to Our Newsletter</h3>
+      <p class="text-sm mb-4">Get restock alerts and seasonal offers straight to your inbox.</p>
+      <form class="flex" onsubmit="event.preventDefault(); this.querySelector('input').value='';">
+        <label for="newsletter-email" class="sr-only">Email address</label>
+        <input id="newsletter-email" type="email" required placeholder="Your email" class="w-full min-w-0 rounded-l-full px-4 py-2.5 text-sm text-ink focus:outline-none">
+        <button type="submit" class="bg-brand-500 hover:bg-brand-400 px-5 rounded-r-full font-semibold text-sm shrink-0 transition-colors">Subscribe</button>
+      </form>
+      <!-- <div class="flex gap-3 mt-5" id="social-icons"></div> -->
+    </div>
+  </div>
+  <div class="border-t border-brand-800">
+    <div class="max-w-7xl mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-brand-300">
+      <p>&copy; 2026 Abdale Shop. All rights reserved.</p>
+      <div class="flex gap-3" id="payment-icons"></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---------- helpers ---------- */
+function starSVG(cls) {
+  return `<svg class="${cls}" width="14" height="14" viewBox="0 0 24 24" fill="#5CA52A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>`;
+}
+function stars(n) { return `<div class="flex gap-0.5">${Array.from({length:5}).map((_,i)=>starSVG(i<n?'':'opacity-25')).join('')}</div>`; }
+
+/* ---------- category strip ---------- */
+const categories = [
+  {label:'Cutlery', icon:'M4 3v10M9 3v6a2 2 0 002 2h0a2 2 0 002-2V3M20 3v18'},
+  {label:'Trays', icon:'M3 11h18M5 11V7a2 2 0 012-2h10a2 2 0 012 2v4M4 11l1 8a2 2 0 002 2h10a2 2 0 002-2l1-8'},
+  {label:'Takeaway', icon:'M4 8h16l-1.5 12a2 2 0 01-2 1.8H7.5a2 2 0 01-2-1.8L4 8zM8 8V6a4 4 0 018 0v2'},
+  {label:'Paper Boxes', icon:'M3 7l9-4 9 4-9 4-9-4zm0 0v10l9 4m0-14v14m9-14v10l-9 4'},
+  {label:'Plates', icon:'M12 3a9 9 0 100 18 9 9 0 000-18zm0 4a5 5 0 100 10 5 5 0 000-10z'},
+  {label:'Napkins', icon:'M4 4h16v16H4V4zm0 8h16M12 4v16'},
+  {label:'Straws & Stirrers', icon:'M6 3l10 10M6 3v18M16 13v8'},
+  {label:'Bags', icon:'M6 8h12l-1 12H7L6 8zM9 8V6a3 3 0 016 0v2'},
+];
+document.getElementById('cat-track').innerHTML = categories.map(c => `
+  <a href="#" class="flex flex-col items-center gap-2 shrink-0 group w-20">
+    <div class="w-14 h-14 rounded-full bg-brand-50 border border-brand-200 flex items-center justify-center group-hover:bg-brand-100 transition-colors">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5CA52A" stroke-width="1.6"><path d="${c.icon}"/></svg>
+    </div>
+    <span class="text-xs font-medium text-brand-800 text-center leading-tight">${c.label}</span>
+  </a>`).join('');
+
+/* ---------- featured large grid ---------- */
+const collections = [
+  {title:'Explore Bowls', from:'from-brand-500', to:'to-brand-700'},
+  {title:'Explore Serving Trays', from:'from-brand-600', to:'to-brand-800'},
+  {title:'Explore Takeaway Boxes', from:'from-brand-400', to:'to-brand-600'},
+];
+document.getElementById('featured-grid').innerHTML = collections.map(c => `
+  <a href="#" class="relative rounded-2xl overflow-hidden h-64 bg-gradient-to-br ${c.from} ${c.to} flex items-end p-6 group">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+    <span class="relative font-heading font-semibold text-white text-lg group-hover:underline">${c.title}</span>
+  </a>`).join('');
+
+/* ---------- service bar ---------- */
+const services = [
+  {title:'Free Next Day Delivery', icon:'M3 7h11v10H3zM14 10h4l3 3v4h-7zM7 20a2 2 0 100-4 2 2 0 000 4zM18 20a2 2 0 100-4 2 2 0 000 4z'},
+  {title:'Satisfied or Refunded', icon:'M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z'},
+  {title:'Friendly Customer Service', icon:'M20 15a2 2 0 01-2 2H8l-4 4V5a2 2 0 012-2h12a2 2 0 012 2v10z'},
+  {title:'100% Secure Payments', icon:'M12 2l7 4v6c0 5-3.4 8.4-7 10-3.6-1.6-7-5-7-10V6l7-4z'},
+];
+document.getElementById('service-bar').innerHTML = services.map(s => `
+  <div class="flex flex-col items-center text-center gap-3">
+    <div class="w-12 h-12 rounded-full bg-white border border-brand-200 flex items-center justify-center">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5CA52A" stroke-width="1.6"><path d="${s.icon}"/></svg>
+    </div>
+    <span class="text-xs md:text-sm font-semibold text-brand-800">${s.title}</span>
+  </div>`).join('');
+
+/* ---------- product card builder ---------- */
+function productCard(p) {
+  return `
+  <div class="shrink-0 w-64 md:w-auto bg-white rounded-2xl border border-brand-100 overflow-hidden group">
+    <div style="background-image: url('${p.link}'); background-size: cover; background-position: center;" class="relative h-44 bg-gradient-to-br ${p.grad} flex items-center justify-center">
+      ${p.sale ? `<span class="absolute top-3 left-3 bg-brand-500 text-white text-[11px] font-semibold px-2.5 py-1 rounded-full">On Sale</span>` : ''}
+      
+    </div>
+    <div class="p-4">
+      ${stars(p.rating)}
+      <h3 class="font-heading text-sm font-semibold text-brand-900 mt-2 leading-snug">${p.name}</h3>
+      <p class="text-brand-600 font-bold mt-1">${p.price}</p>
+    </div>
+  </div>`;
+}
+
+const featured = [
+  {name:'Round Plate 20 sleeves/50ct', price:'$52.23 USD', rating:5, sale:true, grad:'from-brand-300 to-brand-500', link:'https://img1.wsimg.com/isteam/ip/200cdcf6-0e1a-445d-af35-1b80ebe80d3f/IMG_0255.jpeg/:/cr=w:765,h:765,a:cc'},
+  {name:'Brown Ripple Cups 20 sleeves/25ct', price:'$29.86 USD', rating:4, sale:true, grad:'from-brand-400 to-brand-600', link:'https://img1.wsimg.com/isteam/ip/200cdcf6-0e1a-445d-af35-1b80ebe80d3f/image%20222.jpeg/:/cr=w:447,h:447,a:cc'},
+  {name:'Wooden Cutley Set (Sugarcane) 10 Sleeves/50ct', price:'$77.36 USD', rating:5, sale:false, grad:'from-brand-200 to-brand-400', link:'https://img1.wsimg.com/isteam/ip/200cdcf6-0e1a-445d-af35-1b80ebe80d3f/download.webp/:/cr=w:351,h:351,a:cc'},
+  {name:'Round Meal Tray (Sugarcane) 8 Sleeves/25ct', price:'$87.75 USD', rating:4, sale:true, grad:'from-brand-500 to-brand-700', link:'https://img1.wsimg.com/isteam/ip/200cdcf6-0e1a-445d-af35-1b80ebe80d3f/8.jpg/:/cr=w:760,h:760,a:cc'},
+];
+document.getElementById('featured-track').innerHTML = featured.map(productCard).join('');
+
+const popular = [
+    {name:'Round Plate 20 sleeves/50ct', price:'$52.23 USD', rating:5, sale:true, grad:'from-brand-300 to-brand-500', link:'https://img1.wsimg.com/isteam/ip/200cdcf6-0e1a-445d-af35-1b80ebe80d3f/IMG_0255.jpeg/:/cr=w:765,h:765,a:cc'},
+  {name:'Brown Ripple Cups 20 sleeves/25ct', price:'$29.86 USD', rating:4, sale:false, grad:'from-brand-400 to-brand-600', link:'https://img1.wsimg.com/isteam/ip/200cdcf6-0e1a-445d-af35-1b80ebe80d3f/image%20222.jpeg/:/cr=w:447,h:447,a:cc'},
+  {name:'Wooden Cutley Set (Sugarcane) 10 Sleeves/50ct', price:'$77.36 USD', rating:5, sale:false, grad:'from-brand-200 to-brand-400', link:'https://img1.wsimg.com/isteam/ip/200cdcf6-0e1a-445d-af35-1b80ebe80d3f/download.webp/:/cr=w:351,h:351,a:cc'},
+  {name:'Round Meal Tray (Sugarcane) 8 Sleeves/25ct', price:'$87.75 USD', rating:4, sale:false, grad:'from-brand-500 to-brand-700', link:'https://img1.wsimg.com/isteam/ip/200cdcf6-0e1a-445d-af35-1b80ebe80d3f/8.jpg/:/cr=w:760,h:760,a:cc'},
+];
+document.getElementById('popular-track').innerHTML = popular.map(productCard).join('');
+
+const newProducts = [
+    {name:'Round Plate 20 sleeves/50ct', price:'$52.23 USD', rating:5, sale:false, grad:'from-brand-300 to-brand-500', link:'https://img1.wsimg.com/isteam/ip/200cdcf6-0e1a-445d-af35-1b80ebe80d3f/IMG_0255.jpeg/:/cr=w:765,h:765,a:cc'},
+  {name:'Brown Ripple Cups 20 sleeves/25ct', price:'$29.86 USD', rating:4, sale:false, grad:'from-brand-400 to-brand-600', link:'https://img1.wsimg.com/isteam/ip/200cdcf6-0e1a-445d-af35-1b80ebe80d3f/image%20222.jpeg/:/cr=w:447,h:447,a:cc'},
+  {name:'Wooden Cutley Set (Sugarcane) 10 Sleeves/50ct', price:'$77.36 USD', rating:5, sale:true, grad:'from-brand-200 to-brand-400', link:'https://img1.wsimg.com/isteam/ip/200cdcf6-0e1a-445d-af35-1b80ebe80d3f/download.webp/:/cr=w:351,h:351,a:cc'},
+  {name:'Round Meal Tray (Sugarcane) 8 Sleeves/25ct', price:'$87.75 USD', rating:4, sale:false, grad:'from-brand-500 to-brand-700', link:'https://img1.wsimg.com/isteam/ip/200cdcf6-0e1a-445d-af35-1b80ebe80d3f/8.jpg/:/cr=w:760,h:760,a:cc'},
+];
+document.getElementById('new-track').innerHTML = newProducts.map(productCard).join('');
+
+/* ---------- accreditations ---------- */
+const accreditations = ['FSC Certified', 'Carbon Neutral', 'Plastic Free', 'Compostable'];
+document.getElementById('accreditations').innerHTML = accreditations.map(a => `
+  <div class="border border-brand-200 rounded-xl h-24 flex flex-col items-center justify-center gap-2 bg-white">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5CA52A" stroke-width="1.6"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+    <span class="text-[11px] font-semibold text-brand-800 text-center px-2">${a}</span>
+  </div>`).join('');
+
+/* ---------- rating summary ---------- */
+document.getElementById('avg-stars').innerHTML = stars(5);
+const ratingBreakdown = [{label:'5 star', pct:82},{label:'4 star', pct:12},{label:'3 star', pct:4},{label:'2 star', pct:1},{label:'1 star', pct:1}];
+document.getElementById('rating-bars').innerHTML = ratingBreakdown.map(r => `
+  <div class="flex items-center gap-2 text-xs text-gray-600">
+    <span class="w-10 shrink-0">${r.label}</span>
+    <div class="flex-1 h-2 bg-brand-100 rounded-full overflow-hidden"><div class="h-full bg-brand-500" style="width:${r.pct}%"></div></div>
+    <span class="w-8 text-right">${r.pct}%</span>
+  </div>`).join('');
+
+/* ---------- reviews ---------- */
+const reviews = [
+  {name:'Hannah W.', date:'12 Aug 2026', text:'The palm leaf plates held up brilliantly at our garden party — sturdy, biodegradable and genuinely nice to look at.', rating:5},
+  {name:'Tom R.', date:'3 Aug 2026', text:'Ordered a sample pack first and was so impressed I switched our whole cafe over to their bagasse bowls.', rating:5},
+  {name:'Priya S.', date:'28 Jul 2026', text:'Delivery was next day as promised and the packaging itself was fully recyclable. Small details that matter.', rating:4},
+  {name:'Daniel K.', date:'19 Jul 2026', text:'Great value for a large event — the cutlery sets didn\u2019t feel flimsy at all, unlike other compostable brands.', rating:5},
+];
+document.getElementById('review-track').innerHTML = reviews.map(r => `
+  <div class="shrink-0 w-80 bg-white rounded-2xl border border-brand-100 p-6">
+    ${stars(r.rating)}
+    <p class="text-sm text-gray-700 mt-3 leading-relaxed">${r.text}</p>
+    <div class="flex items-center gap-2 mt-4">
+      <span class="text-sm font-semibold text-brand-900">${r.name}</span>
+      <span class="text-[10px] bg-brand-100 text-brand-700 font-semibold px-2 py-0.5 rounded-full">Verified Customer</span>
+    </div>
+    <span class="text-xs text-gray-400">${r.date}</span>
+  </div>`).join('');
+document.getElementById('review-dots').innerHTML = reviews.map((_,i) => `<span class="w-2 h-2 rounded-full ${i===0?'bg-brand-600':'bg-brand-200'}"></span>`).join('');
+
+/* ---------- blog ---------- */
+const blogPosts = [
+  {title:'How to Serve Hot & Greasy Foods Sustainably', grad:'from-brand-400 to-brand-600'},
+  {title:'A Guide to Composting Your Tableware at Home', grad:'from-brand-300 to-brand-500'},
+  {title:'Planning a Zero-Waste Summer Party', grad:'from-brand-500 to-brand-700'},
+];
+document.getElementById('blog-grid').innerHTML = blogPosts.map(b => `
+  <a href="#" class="group">
+    <div class="h-48 rounded-2xl bg-gradient-to-br ${b.grad} mb-4"></div>
+    <h3 class="font-heading font-semibold text-brand-900 group-hover:text-brand-600 transition-colors">${b.title}</h3>
+  </a>`).join('');
+
+/* ---------- social + payment icons ---------- */
+const socials = [
+  'M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z',
+  'M12 2a10 10 0 100 20 10 10 0 000-20zm4 6l-6 6m0-6l6 6',
+  'M4 4h16v16H4zM8 11v6M8 8v.01M12 17v-4a2 2 0 014 0v4m-4 0h4',
+];
+document.getElementById('social-icons').innerHTML = socials.map(p => `
+  <a href="#" class="w-8 h-8 rounded-full bg-brand-800 hover:bg-brand-600 flex items-center justify-center transition-colors">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="${p}"/></svg>
+  </a>`).join('');
+
+const payments = ['VISA', 'MC', 'PayPal', 'Apple Pay'];
+document.getElementById('payment-icons').innerHTML = payments.map(p => `
+  <span class="border border-brand-700 rounded px-2 py-1 text-[10px] font-semibold text-brand-200">${p}</span>`).join('');
+
+const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+const mobileSecondaryNav = document.getElementById('mobile-secondary-nav');
+
+if (mobileMenuToggle && mobileSecondaryNav) {
+  mobileMenuToggle.addEventListener('click', () => {
+    mobileSecondaryNav.classList.toggle('hidden');
+  });
+}
+</script>
+</body>
+</html>
