@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Green Shop | Eco-Friendly Disposable Tableware</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50:  '#f4f9ee',
+            100: '#e7f3d8',
+            200: '#d3ebae',
+            300: '#b9df86',
+            400: '#9ad05a',
+            500: '#5CA52A',
+            600: '#4d8f24',
+            700: '#5CA52A',
+            800: '#315d1c',
+            900: '#254716',
+            950: '#18300f',
+          },
+          cream: '#F5F5F5',
+          ink: '#2C2C2C',
+        },
+        fontFamily: {
+          heading: ['Montserrat', 'sans-serif'],
+          body: ['Open Sans', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'Open Sans', sans-serif; color: #2C2C2C; }
+  h1,h2,h3,h4,.font-heading { font-family: 'Montserrat', sans-serif; }
+  .carousel-track { scroll-behavior: smooth; }
+  .carousel-track::-webkit-scrollbar { display: none; }
+  .carousel-track { -ms-overflow-style: none; scrollbar-width: none; }
+  :focus-visible { outline: 2px solid #5CA52A; outline-offset: 2px; }
+  .tab-btn.active { color: #295c2e; border-color: #4CAF50; font-weight: 700; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+  #toast { transition: transform .35s ease, opacity .35s ease; }
+  .field-input { border: 1px solid #bfe0ba; border-radius: 0.75rem; padding: 0.65rem 0.9rem; font-size: 0.875rem; width: 100%; transition: border-color .15s ease; }
+  .field-input:focus { border-color: #4CAF50; outline: none; }
+  .route-page.hidden { display: none; }
+</style>
+</head>
+<body class="bg-white text-ink antialiased">
+
+<!-- ============ TOAST ============ -->
+<div id="toast" class="fixed top-5 right-5 z-50 opacity-0 translate-y-[-12px] pointer-events-none">
+  <div class="bg-brand-600 text-white rounded-xl shadow-lg px-5 py-3 flex items-center gap-3">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+    <span id="toast-text" class="text-sm font-semibold">Item added to cart!</span>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="w-full">
+
+  <!-- Top Info Strip -->
+  <div class="bg-brand-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4 flex-wrap text-sm">
+      <div class="flex items-center gap-2 font-medium">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="shrink-0"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7zM7 20a2 2 0 100-4 2 2 0 000 4zM18 20a2 2 0 100-4 2 2 0 000 4z"/></svg>
+        <span>Free Shipping on Orders Over $100.</span>
+      </div>
+      <div class="flex items-center gap-2 font-medium">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="shrink-0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.9.33 1.79.63 2.65a2 2 0 01-.45 2.11L8.09 9.68a16 16 0 006 6l1.2-1.2a2 2 0 012.11-.45c.86.3 1.75.5 2.65.63A2 2 0 0122 16.92z"/></svg>
+        <span>+1 (630) 833-3988</span>
+      </div>
+      <span class="font-bold whitespace-nowrap">Order Free Samples</span>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <div class="bg-white border-b border-brand-100">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-center gap-6">
+      <a href="#/home" class="flex items-center gap-2 shrink-0">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCACnASwDASIAAhEBAxEB/8QAHQABAAEFAQEBAAAAAAAAAAAAAAECBQYHCAQDCf/EAEMQAAEDAwEFBAYIBAUDBQAAAAEAAgMEBQYRBxIhMUETUWFxCBQiMoGRFSNCUmKhscEzQ3LRFhdTgpIYJCU1Y5PC8P/EABoBAQACAwEAAAAAAAAAAAAAAAADBAIFBgH/xAAsEQACAgIBBAECBQUBAAAAAAAAAQIDBBESBSExQVETIhQyUmGBcZGhsfDR/9oADAMBAAIRAxEAPwDstERAEREAREQBERAEREBCKUQEIiIAiIgCIoJ0QAnRUk6ooQBEPAarVG0vbbYcZllt1oYLvcmahwY7SKI/id1PgFHbbCpcpvRhOyMFuTNruIa0ucQGjmSdAFiWT7ScKxzeZcr7Tds3+TC7ff8AILnysve0XaE7tbjdJLba3HhHDrG0juAHF3xXvs2E2G26PdTetzczJPx1PktNf1qMe1aNdb1KMe0UZzXekDaHSGOyY3dbj3OLezBXj/zmzSc71Jge6z/3ZeK8kMccLd2GNkbR0Y0AKpzg1pc5wDQNSSdAFrpdYyJeHopS6jc/B7o9ructIdNg0LmdQyo4r2wbbKyFut1wW6QNHvPika4BaxyHPKSlmNHZ4jX1RO6C0Et18AOLl7sf2bbSc13am71TrNQP4gS6hxHgwfurGPmZ1r1Hv/BPTkZU32Nq2vblgFYNJ62poZBzbUQkAfFXWh2t7PKyobBFk1Ix7jo3tCWgnuWNWDYBhtE1rrpLWXSUe9vv3Gk+QWTx7J9nrI2sGM0pDSHDUknX5rc1vLa+7RsY/X96M1YQ5oc0gtcNQR1CqB0KpjY2ONsbGhrGgNaByAClXSyVqVSFUgCIiAIiICUREARRqFKAIiIAiIgCIiAIiIAoUqEAREPBAQToFSUPFEBConlighfNPI2OKNpc97joGgcySqyQBqToFzJ6QO02a/XB+JY7M82+J/Z1MkR41Mn3B+Efmq+RkRohyZFdaqo7ZVtj2wV1/qpccw+SWOgLuzkqYuElSeob3N8VYsPwWGkDK28tbNUe82Dm1h/F3le/BMVistO2rq2NfcJG8e6Idw8fFZWuRysyd0ttnPX5MrJeSAAAAAABwAA5KUXxrKmCjpZKqpkEcMTd57j0CpFUouVbS26jkq6yVsULBqSevgO8rC7bTZVtRvDrZYoX0tqjd9bO7UMaO9x6n8IXoxTH7xtcygtDpKPH6N47WTTp3DvefyXUGN2O147aIbVaKRlNSxDQNaOLj3k9St30/pjs++fg2mHhc/ul4MV2cbLcawyFksNO2tuWg36ydoLtfwjk0LO0RdLCuNa4xWkbqMVFaSCIizMgpQBVAIAApREAREQBFKICklRqhOiaoAiIgKgVKoUg6ICpEBRAEREAREQBERAFQTqqzyVCAhFKpe5sbHSPOjWgknwCA1H6SWdyY5YGWC1zFlyuTTvvaeMUPU+Z5LTGymwteXXypj1DSW0wcOvVytW0G8VGabR66sY4vbUVPq9OO6Np0C2rbqSKgoIKOEARwsDQB+q5HqWS7Zv49HP5t7nI+6Ii1RrwsJv0VfmuY0mE2Ynd396qkHJoHMnwA/NZFlV0bZ7FU1xPtNbuxjvceSzD0YsSNsxmXKK+Mm43Zxc0uHFsWvD5nj8lsem4v17e/gu4VH1Z9/BsnD8etuLWCmstriDIIG6F2nGR3Vx8SruqZZI4o3SyvbHG0auc46ADxK89vuVuuG96hcKWr3Pe7GUP3fPRdgkopRR0S0uyPUilFkekKpoUKpqAlERAERSgIRSiAKFKgnwQFOnFNPFeeruNBRzwU9VWQQS1B3YWSPDTIe4A816V5sEfFFOijyXoCJqgQAKoFUgogK9Qmqo1TXxQFeoUa+CpRAVaqVQpBQFSoKrVLkBCxfatdDZ9nV7r2u3XspXNYfxEaBZQtZek3OYdk9Y1uv1tREw+W8ociXGqT/YjtfGDZznspohU5K2dw1bTRF/+48ltxa82NRjS5S9fZZ+62GuHue5HL2v7gnwRCQAXO5AanyURGYblVLLk+b2LEKc6iWYST6dG9dfgD811TRU0NHRw0lOwNhhjbGxvcANAtB+jhbHXrOb9mM7SYoCaWmJHDU89PgB810Euu6TR9Onk/Z0WBVwr38mn9p4q8y2pWzZ363PS2mOm9euHYvLXTDXg3Xu/uvntKwO34bjn+LMFifabjaNJXtie7dqYwfaa8deHVezavT1+LZzatpVDTS1VJBF6pdYoxq5sJPB4Hgr/AJrktku+yS9Xe210FbSSULwCxwOhI0AI6HU8lLKEW7Of5vX9PWjNxi3Ll5Mjw+8xZFi9tvcA0ZWQNl07ieY+auq156OTnHY/ZA7Xgwga92q2IrlMnOuMn7RYrlyimyFU0qE6qQzK0VIKnVASijUJqEBKglQSo1QEk6qFrDM9ohrMppcFw2eOa7VUm5U1g9plIwcXEd7tNfJbLpYjBTRQulfKY2BpkefacQOZ8So4Wxm2o+jCM1JtL0as9JTDn37FWX6gEn0lZ9ZGbjiCY+btNOo5/BWrYTtdgutNT47k9U2O5NAZTVLzo2oHQE9Hfqt2SMZLG6ORocx4LXNI4EHmFxhthxGXD86qaCJjhR1DjUUTh90nkPEFUMtzx5q6HvsyrkcqpfUj/J2gmi5v2ObbJLeIbFmMz5aYaMgrzxdH3CTvHiuiqKrpq6lZVUc8dRBIN5kkbg5pHmrlGRC+O4liq6Nq2j7aJp4pxRTkpGiKU8ygIHiingoOvmgCInVAETVEBU0oVTyVWuoQFK1j6TkLpdk9W5v8qoiefLeWzisY2rWl172d3q3sbvSPpXOjA6uA1ChyI8qpJfBHatwaOadjbgYbkzXjvNctgLVeyKs7G/S0jjoKiHQA/eatq+K4e5fccvavuCsub3D6MxisqG/xXs7KId7ncAr10Vkitzss2nWTGmgupaR3rtbpyDW8gfyXuPW7bFFez2mDnNRRuTYrjoxnZza6F7A2olj7ec9S9/Hj8NAszUABoAAAA4ABSu7hBQior0dTGKikkUyMZIxzJGtexw0c1w1BHcVzz6RmJYxjNmbXWOOeguNzqBF6rTykQzdSSzlz0+a6FmkjhifLK9scbGlz3OOgaBzJWhrdv7XNsougY52M487dicR7M0gPTzI18gquYlKKhru/H/pDkpSXH2zJ8M2f5ZbMat9JT57V0ULYGkU7KRjhHqNd0E+a2LYKCpt1AKeruc9yl11dPMACfgOSuCKeumNfgljWo+AiIpTMIiIBqe9F5LrcrfaqR1Xcq2CkgaNS+V4aPzWldoO3+ipg+iw6m9cm4g1k40jb4tHN36KG7IrpW5sjsthWvuZue+Xe22S3yV91rYaSmjGrnyO0+XeVzntR22XHIGVFmxGKWkoSCJKv+bIzrp90ePNYE52W7Qbp6zcq6oqWB3tSykiKMdzW8vgrhmtLQYvjkdpoeNTWHWeZ3vuYOfkFo8rqkrHwh2NXfmuT4x7GbeiTY21F8uuQytJ9WjEETjx1c7i469/BdIrW/o4WV1o2XUUkrA2Wue6pfw48eA/ILZC3GFX9OmKNjjQ41pFS1p6Q2IuyTCn11Ez/AMnaiaiBw5lo95vy4/BbLVL2tewscAWuGhB6hTW1qyDi/ZJOCnFxZxTLY/p+xtvtnjb6w0btZSj7w5uaPHuXxwvOMow6o/8AD3CSOIO+spJtXRnw3TyPks0ulB/gTbBcLJoY7dcXdrT9w3uI/PgvZk2JWy970rm+rVf+tGOfmOq5CU549ri+2jn3OVM9My3EfSFs9S1kOTW6a3y8jNB9ZGfhzC2pYsvxm+RCS13uiqARroJQCPgVx7eMKvtuLnMgFZCPtw8Tp4hY49j6eX22SQSDqQWkLZU9VsS79y7XnS99z9AGOY8ase1w8DqqlwdSX+/Uunqt9uUWnAbtU7T9V7os1zGIaMyi6geNQ4q0urR9xJ1nr2juPQ6qkuaDxeB5lcOS5ll8rtZMnupPhUuH7rxS36/SuLpb7c3k8yap/wDdH1aPqI/Hr4O7hNCToJoye4OCr58RxC4JZdLqx2+y7V7Xd4qHa/qrxZ88zO0yNfQ5JXgN5NlkMjfk5I9Wj7iFnr2jt7go4LnvAvSClEkdHmVE3cOg9dphy8XN/st92q40N1t8VfbqqKqpZW7zJY3agrYU5Fdy3Blqu6Fi+1nqCjiEUgKclI6qHNa9pa4agjQjwVRUacPFAcd7UMeqtn20p0sTCKOSb1qkfpwcwn2mfDkth0dRFV0sVVA4OjlYHNPgVtnaZhduzfG5bXWARzt9ulqNPahf0Pl3hc40NRdNntxfjWXUssEIcTT1IBLCO8HqP0XLdTwZVy5RXY0WdiuD5LwZpX1UVDRTVk7g2KFhe4nwWUejfYntstbmFfFu1t6lLo97myFp0aFrG6TU+Y3y04pbK2J1PWSiSsmDwGtibxIJK6KlvmK43bIaaa8W+jpaaMRsaZm8GgaDkpejY6Tds/RJ02lJuyRfyvHdrlQWmgkr7lVxUtNENXySO0AC1HmXpAY/Qb1LjVLLd6s8GPILYtf1d8Fi9pwraDtWr47tmtbNbbNvb0dPpulzfwM6eZW4nlpvjUuT/wAf3NjLITfGHdnsyfLcg2v3l2J4UyWksLXaV1e4ab7f2HcOq3VheNWzE8eprLaogyGFvtOPOR3Vx8Svpi2P2jGbRFa7NRx0tOwfZHtPPe49Srr1UlNLi+c3uT/7SMq62nyk9sFFRUSxU8TpZ5Y4o2jVznuAA+JWuMv21YVYC+Gnq33aqbw7OkGrQfF3IKSy2Fa3J6M5zjBbkzZS+FdW0dDC6atqoaeMDUuleGj81zBlO3zLbo50Flp6e0xHgC1vaSkfHh8lhctvzXKphUV8lfVb326uUho8gVrreq1w/KtlSzOhHwdJ5NtpwWzb0cVwdcpxw3KRu8Nf6uS1ZlXpCX+sD4bBbae2RnlLMe0k+XJYxbNmruDrjcA0dWQN/crJ7XiFgt5Do6Js0g+3N7S1d3V7Jdk9f0KFnUJvw/7GuKuTL8zre2rJq65P19+VxEbPLoFlOPbPIYS2e8zCdw49hHwYPM9VnbGtYwMY1rWgcABoFOq1k8iUmUp3SkUQRQ00AiiYyGFg4NaNA0LUV1dPmGexUVK10gqKhtNC0cfYB4n5alZ9tCuv0XjkvZu0nqfqo+/jzK9Pop4sa2+1eU1MesNC3sabUcDIRxI8h+qsYNDtsS+SbEqdkzoy10cVutlLQQgCOnibE3TuA0XqGijgi7NLR0iKlCqKp6r0GjvSxsLpLNbMopWHtqCbs5XAcmO5H/lorLj9ey52SkrmkfWxje8HDmt5ZtZIsjxO42aUDSpgc1pPR2nsn56Ll3ZZWy0dVXY1W+xPBI4sa7nqDo4fuua61RqamvZpepValyRn458156yio6tpbVUsE4P32An5r0ItDs1OzHKrCMbqHF3qRiJ/03kLxu2d2AnUSVgHdvj+yy/giz+pL5MucvkxGPZ7j7feNW/zeF92YHjbDxppX/1SFZOET6kvk95y+TGzguMlunqTx4iQq3V+zm0SMPqdTUUz+m8d5qzXgoKKyS9hTkvZpXI8YutjJfURiam14TxjVvx7ldtl+0K74LdGyUznVNskd/3FGXey4feb3OW0pGMkjdHIxr2OGjmuGoI8Vq/O8PdbnPuVrjc+jJ1kiHExeI8FaoyZRkmnpliq9p/DOucSyK15RY4LxaJxNTTD/cw9WuHQhXdcbbF8+qMIyRhme59nq3BlXFrwZ3SDxC7Dpp4qqnjqKeRskUrQ9j2nUOB5FdXiZKvhv2vJvse5Wx/c+qAImqtk4WLbUpMbpcMr67J6OnqqOCIkMlaCS7oGnmCT3LKStMZGXbVto8ePUxc7F7BKJLhM0+zUTjlGD1AUGRPjHSW2/BFbLUdLyzDMC2IOyjFo7/V3CazzVkjpaenY3UMhJ9nXXjqsjt/o4WoTb9yyKtqG68o2BpPxOq3rDHHDCyGJjWRsaGtaBoAByCq66KGGBSktrbI44laXdGHYhsyw3Fy2S3WiKSoH8+o+sfr3jXl8FmPROi1/tT2p2PCYTS6ivuzm6spI3e74vPQKw3XRHfhErcKo/CM5uFZSUFI+rrqmKngjGr5JHBrQPMrTGfbfrTQGSjxSl+kqgaj1mT2YWnw6uWl8nyjL9od23KuaWoBP1dJDqIYx4j9ysgxzZ9SwBk95kFRKOPYsOjG+Z6rSZXVn4r7f7Nbf1DXaPYx+8ZBnGfVZFVWVdYwn+FH7EDPgOCutk2b6Br7tVgD/AEoP3K2DTww00Ihp4mRRt5NY3QL6HQcCQPM6LSWZM5vbNXO+UnstlqsFotjQKOhiY4fbcN53zKuaIq7bfkibb8kKURDwhNNVKs+Y3ZtmsFRVAjtnDs4R3uK9S29HqW3o17n9bNfsrjtlADL2TxTwtb9qQnQn/wDdy612cY3BieHW+ywtAfDGDM4fakPFx+a0H6L2Huu+RzZXXxl9NQOLYC4cHzHmfgP1XTy6vpWPwhzfvwdBgU8Y8mRwREW3L5UoPNSiAhcvekXjdTiueQZbbGblNXv33EDg2Ye8D/UF1ErHnOM0GW41VWS4N+rmb7DwOMbx7rh5FVcvH+vW4+yDIq+rDRo+w3OnvFrir6dw0eNHt6sd1BXu0K1dH9L7NsvqbPd4nGLe+sA5SM6SNWzaOqp6yljqqWVssMg1a5p5ri7qnXLTOasrcHpn0HepRRqoiMnRCixjaRJUw2OKWN8raYVDRVmM6O7Prx6L2K29HsVt6Mja+Nx0bIxx7g4FVEEcCsYhwSw1VLHVW2vuETZWh7JGVBPNfKS1ZnY/boK9l5pm8exmGj9PArP6a9Mz4fDMsCggEEEAg8CD1WPWTLaCvqPUqxj7dXjgYJ+Gp8Csi5LBxcfJg015NU7RsYba5/pKhj0opjpIwD+E4/sVuD0Ws1fXW6bELhMXVFE3tKNzjxdF1b8P0VvraWGto5aSoYHxStLXA9y1LQ1FfgGf0tbGXb1HMHtP+rCeY+IWywMp12Jv/kXsS9wkmzt5QV5bTX09ztdNcaSRr4KiJsrHA8CCNVrzPdosz7oMPwSNt0yGf2Xyt4w0ber3nlqO5dZO2MI7ZvpTUVtlW1TK7hU3CPAcPd2l+r26VEzfdooT7z3HodOSy7A8Wt2IY3T2a3N1bGN6WU+9NIfee495Kt2zTCaXEbfK+WZ1deKw9pX10nF8rz0B6NHQLL1hXBt85+f9GMIvfKXn/RCKViG1zLo8MwurugLTVvHZUrD9qR3L5c1LOahFyfhEkpKK2zDdu+1cYwx2P4/IyS8yN+tl5ilaf/t+i0DjGO3LJ62SuqppRA95dPVSHV0juumvMqnFbPWZVfpqmulkkYX9rWTOPF5J5fFbgpoIaanZBTxtiijGjGNHABcjm5srZf8Adjn8rKlOR5rPaqC0UgpqCBsTPtH7Tj3k9VVdbjRWujdV107YYm9TzJ7gOq8eT3+isNH2tQd+Z/CKFvvPP9lYLHYa6+Vzb7k+pHvU1H9lg6Eha9R390imlvvIuFHXXrIR2tE02q2n3Znt1mlHe0dAvbHjVs4uqDVVMh5ySzu1PyOivAAAAAAAGgAHJHENaXE6ALzl8HnL4LfbKd9DVSUjZpJabcD4hI7eczjoW69QrivhBH9a+d2urwAB3BfdePyePyERF4eBavzCery3MqTHbSDLpKIIgORefed5D9lle0C/tstncyF4FXUgtiH3R1csq9F3BXUtG/M7nEe3qQWUTXji1nV/mVsOn4rusRcw6HZM27hGO0mK4vRWSiaAynjAe777/tOPmVelKLsoxUVpHRpJLSITipRenpKFNFBQDVAminRAYXtUwC151ZTT1GkFfCCaWqA9qM9x72nuXMLnZLs2yCS03ald2RdqYz/DlH34yu0VY8zxSyZbanW690bZ4/sPHB8Z72noVr83AjkLa8lTJxY3La8mjbDe7deqYTUMwc77UZ4PZ5hXLgsNzzY9leIVbrnj8k1yoWHVskHCeMfib1+Cstj2iVNO71a90plLTo6Rg3ZB5tK5e/DsqemjR24063po2Xx6KiohiqKd8E8YkjkbuvaRwIVttWR2W5NHqtfFvn7Dzuu+RV2HEajiD3Kq015K+mjC44b3hkz3W6J9zsrjqYOckHl4LIrLl1hurQIqxsM2uhim9hwPxVxVpu2N2W6Euq7fGZD/ADGDdd8wpFYn5M1P5PZkGP2vIKUtqoWufp9XPH7zT3ghYpQXG54pdI7Nf5DUUUx3aWs7vBy+s+HQ0DDLR5HXW9g+/Lq0fNYxefpO+VMOPWu7VORTOeN2NkPBp79791LCPP7V3JIrl2Rtbju73Ic9eiwjagbFVWwOmuEDK6D+CGneLu9p0WdY9sKulZaaY5LlldE8sG/SQcRH+He6rPMU2Q4Pj0rZ4rWK2qbxE9W7tHA941Wwo6Pc2m3ot1dOs3t9jn3Bsoyq6UVv2cRX+Ox0UshBqZWlsgaeO4D3HoumNnmD2PCbX6paoS6aT2qiqk4yTO7yf2Xg2hbMcZzKn1qqUUdcwARVlON17dOWunMLDKal2vbPoezp3QZhaIvdY5xbUMb5/txW3qrljy3Ncvh/H8Gwrg6X9y3+5utFp+k26W+GPS+4pf7bKODtacuaPivWNvmA8jPXNPcaZytLLp/UT/iK/k2qudPS+rJzcbDb+IgDJJfAu4BZr/nvh0p3aKlu9a/oyGkJKwzamcg2q0lKLNgl1pXUT3PjqqwiLVpHFu6eeuirZdsLaXGD2/2IciyNlbjF7ZZdmVNHBiVPJGPanLpJD3nXRVX7KG08pt9mgNyuTuG5HxZH4uK15RXKttLxZb59IU9DE8iSnjO4/XqNe5ZrZ8swyhphFRPFI3qOyOp8z1XKyrak21s0UoNPfk9GO4u9labxf5hW3Nx1APFkXgAsqWOw5haqlwZQQ1tY48hFCdPmeC98Mt1qwCadlBGfvnfk+Q4BRSUn+Yjkm/JcZHtYNXHnyHUr5ta+RwdING9GfuVMUTWaEkud1c48SvqsTEIiLw8C8d4uNLarfLXVjw2OMcurj0A8VTerrRWijNVXTCNg91v2nnuAWu6KmyLahlcVttsJZAw68f4dOzq9x71NTTK2SSRLVU5vSLls4xqv2o56amua5trpnB9S4cmsB9mIeJXXFLBDS00VNTxtihiaGMY0aBoHAAKy4Fi1tw/HYLNbI/ZYNZZSPalf1cVf12OFirHhr2dHjUKqOvYREVwsBEUoAiIgCIiAIiIAQsTy/Z1iGUguutnhM5/nxDckHxCyxFjKEZrUls8lFSWmc+5B6OLS90lhyB0Y5tjqma6f7hxWLy7IdqlpeRb5452DkYarQH4OXVSKlPptEvWirLDql6OVI8S21MG6KCU+LpWH91cKXZ3tkryGVFTT0TTzc6YcP+K6bUacVEukUJ+zBdPqNDWb0f56qZs2W5PUVnHUw0+oB/3FbbxDDsdxOk9XsdshptR7Ummsj/N3NX9QrlWLVT+RFmuiuv8AKh5IfBBr1UlWCUp0TqpOqaID5SwwS/xYY5P6mgrzOtNpc7edbKIk9ewb/Ze0+SdF5pHmkeeGhoYDrDR00XiyJo/ZYzZ81oqjIqnG7u1tqvEDyY4JX+zUR6+y+N3I6jpzCy7qsQ2mYBZs5tjYa1rqeug40tbFwkhPn1Hgo7FJLcDGfJLcTDNpFhjgvkstVSRTU1Ud+Nz2A8eo1WKsstna7ebbKQHv7NWrJZ9rOC0Utnu0Tr7aG6djVujMoaByO8OLfIq00O0q3SNAq6GeF3UsIcNf1XI5tTVrcU1v0c9k1tWNxXkziKNkTd2NjI29zWgKtYvDneNyc6qWP+qIr6nNsa5/SB/+NypcJfBV4S+DI1GqxOo2g4/GD2bqmY9zY9P1VkuW0t26W0FuDD0fM7X8gvVVJ+jJVyfo2M97WML3uaxoGpc46ALDclz6goQ6G2AVlQOG/wAo2nz6qxWqx7QNoE7W01JVS07j/EeDFA0futzbPNg9ms0kVdkkzbtWN4iADSBh8vtfFX8bptlr3rsW6cKczVOD4Blu0q5NuNdJJS23X2quVugI7o29fNdP4RidlxCzMtlmpWxMHGSQ8Xyu73Hqr3TxxwxNihjZHGwaNawaADwC+i6XFw4Y67efk3NGPGpdvIREVssBERAEQKdEAREQBERAEREAREQBERAEREATTjqiICNVKIgI1UoiAKOHVEQEaJoiICHta9pa9rXNPMEagrDMi2WYLfZXTVlihjmdxdJT/VuJ+CIsJwjNaktmMoxl5RiFd6POISv1pq+5Uw15doH/AKryf9OeOa/+u3P/AItRFA8Kj9JF+Gq/Se6g9HvDYXA1VVcqrToZdzX5LLrBsvwayuElHj9M6VvKSYdo4fEoizhjVQ8RRlGmuPhGYRRxxMEcTGsYOTWjQBVEIinJQBopREAREQBAiICUREB//9k=" alt="Abdale Shop logo" class="h-10 w-10 rounded-full object-contain border border-brand-100 bg-white p-0.2" />
+        <div>
+          <div class="font-heading text-[20px] font-bold text-[#1C1C1C] leading-tight">I'M A Plant</div>
+          <div class="text-[10px] text-[#888888]" hidden>Perfectly Sized for Success.</div>
+        </div>
+      </a>
+
+      <div class="hidden md:flex flex-1 justify-center max-w-2xl">
+        <div class="relative w-full max-w-xl">
+          <input type="text" placeholder="Search for plates, bowls, cutlery..." class="w-full border border-brand-200 rounded-full py-2.5 pl-5 pr-11 text-sm focus:border-brand-500">
+          <button aria-label="Search" class="absolute right-1 top-1/2 -translate-y-1/2 bg-brand-500 hover:bg-brand-600 rounded-full w-9 h-9 flex items-center justify-center transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-5 ml-auto md:ml-0">
+        <a href="#/account" aria-label="My Account" class="text-brand-800 hover:text-brand-500 transition-colors cursor-pointer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-6 8-6s8 2 8 6"/></svg>
+        </a>
+        <a href="#/cart" aria-label="Cart" class="relative text-brand-800 hover:text-brand-500 transition-colors cursor-pointer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.5 3h2l2.6 12.2a2 2 0 002 1.6h8.4a2 2 0 002-1.6L21 8H6"/></svg>
+          <span id="cart-count" class="absolute -top-2 -right-2 bg-brand-500 text-white text-[10px] font-semibold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Secondary Nav -->
+    <div class="bg-brand-50 border-t border-brand-100">
+      <div class="max-w-7xl mx-auto px-4 py-2">
+        <div class="md:hidden flex justify-start">
+          <button id="mobile-menu-toggle" aria-label="Toggle menu" class="flex items-center justify-center w-11 h-11 rounded-full border border-brand-200 bg-white text-brand-700 hover:bg-brand-100 transition-colors">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M3 6h18M3 12h18M3 18h18"/>
+            </svg>
+          </button>
+        </div>
+
+        <nav id="secondary-nav" class="hidden md:flex items-center justify-center gap-7 overflow-x-auto text-sm font-medium text-brand-800 whitespace-nowrap">
+          <a href="#/category/bowls" class="py-3 hover:text-brand-500 transition-colors">Bowls</a>
+          <a href="#/category/clamshells" class="py-3 hover:text-brand-500 transition-colors">Clamshells</a>
+          <a href="#/category/meal-trays" class="py-3 hover:text-brand-500 transition-colors">Meal Trays</a>
+          <a href="#/category/cups" class="py-3 hover:text-brand-500 transition-colors">Cups</a>
+          <a href="#/category/plates" class="py-3 hover:text-brand-500 transition-colors">Plates</a>
+          <a href="#/category/sipper-lids" class="py-3 hover:text-brand-500 transition-colors">Sipper Lids</a>
+          <a href="#/category/cutleries" class="py-3 hover:text-brand-500 transition-colors">Cutleries</a>
+        </nav>
+
+        <nav id="mobile-secondary-nav" class="hidden md:hidden flex-col items-start gap-1 pt-3 pb-1 text-sm font-medium text-brand-800">
+          <a href="#/category/bowls" class="py-2 w-full hover:text-brand-500 transition-colors">Bowls</a>
+          <a href="#/category/clamshells" class="py-2 w-full hover:text-brand-500 transition-colors">Clamshells</a>
+          <a href="#/category/meal-trays" class="py-2 w-full hover:text-brand-500 transition-colors">Meal Trays</a>
+          <a href="#/category/cups" class="py-2 w-full hover:text-brand-500 transition-colors">Cups</a>
+          <a href="#/category/plates" class="py-2 w-full hover:text-brand-500 transition-colors">Plates</a>
+          <a href="#/category/sipper-lids" class="py-2 w-full hover:text-brand-500 transition-colors">Sipper Lids</a>
+          <a href="#/category/cutleries" class="py-2 w-full hover:text-brand-500 transition-colors">Cutleries</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- =========================================================================
+     ROUTE: HOME
+========================================================================= -->
+<main id="page-home" class="route-page">
+
+  <!-- ============ HERO ============ -->
+  <section class="relative bg-gradient-to-br from-brand-700 via-brand-600 to-brand-500 overflow-hidden">
+    <div class="absolute inset-0" aria-hidden="true">
+      <svg class="w-full h-full" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="heroGlow" cx="50%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.16"/>
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="1200" height="500" fill="url(#heroGlow)"/>
+        <g opacity="0.16" fill="none" stroke="#ffffff" stroke-width="2">
+          <circle cx="150" cy="90" r="55"/>
+          <circle cx="1060" cy="410" r="80"/>
+          <circle cx="1000" cy="70" r="34"/>
+        </g>
+        <g opacity="0.22" fill="#ffffff">
+          <path d="M120 430c-20-35-10-80 25-100 5 38-2 78-25 100z"/>
+          <path d="M120 430c10-38 42-64 80-68-8 38-40 64-80 68z"/>
+          <path d="M1080 60c-18-30-9-68 22-86 5 33-2 67-22 86z"/>
+          <path d="M1080 60c9-32 36-55 68-59-7 33-35 55-68 59z"/>
+        </g>
+        <g transform="translate(950,290)" opacity="0.9">
+          <ellipse cx="0" cy="118" rx="118" ry="20" fill="#000000" opacity="0.08"/>
+          <circle cx="0" cy="0" r="100" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="3"/>
+          <circle cx="0" cy="0" r="72" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"/>
+          <path d="M-14 -6c-10-16-2-34 14-38 6 16 2 34-14 38z" fill="#ffffff" fill-opacity="0.55"/>
+          <path d="M-14 -6c2-16 16-27 32-27-1 16-14 28-32 27z" fill="#ffffff" fill-opacity="0.4"/>
+        </g>
+        <g transform="translate(190,330)" opacity="0.85">
+          <ellipse cx="0" cy="70" rx="70" ry="13" fill="#000000" opacity="0.08"/>
+          <path d="M-58 0a58 62 0 11116 0v6a58 62 0 01-116 0z" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="3"/>
+        </g>
+      </svg>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 py-24 md:py-32 relative text-center">
+      <h1 class="font-heading font-extrabold text-white text-3xl sm:text-4xl md:text-5xl leading-tight max-w-3xl mx-auto">Sustainable Supplier's Store</h1>
+      <p class="text-brand-50 mt-4 max-w-lg mx-auto text-base md:text-lg">Compostable, plant-based tableware for every outdoor gathering — save on best-selling ranges while stock lasts.</p>
+      <a href="#featured-products" class="inline-block mt-8 bg-white text-brand-700 hover:bg-brand-50 font-heading font-semibold px-8 py-3 rounded-full transition-colors shadow-sm">Shop Sale</a>
+    </div>
+  </section>
+
+  <!-- ============ CATEGORY STRIP (unused, kept hidden as in approved design) ============ -->
+  <section class="border-b border-brand-100" hidden>
+    <div class="max-w-7xl mx-auto px-4 py-8 relative">
+      <div class="flex items-center gap-3">
+        <div id="cat-track" class="carousel-track flex gap-8 overflow-x-auto flex-1 py-1"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED LARGE GRID (unused, kept hidden as in approved design) ============ -->
+  <section class="max-w-7xl mx-auto px-4 py-14" hidden>
+    <div class="grid md:grid-cols-3 gap-6" id="featured-grid"></div>
+  </section>
+
+  <!-- ============ SERVICE FEATURE BAR ============ -->
+  <section class="bg-brand-50 py-10 border-y border-brand-100">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8" id="service-bar"></div>
+  </section>
+
+  <!-- ============ FEATURED PRODUCTS ============ -->
+  <section id="featured-products" class="max-w-7xl mx-auto px-4 py-16">
+    <div class="flex items-end justify-between mb-8">
+      <h2 class="font-heading font-bold text-2xl md:text-3xl text-brand-800">Featured Products</h2>
+      <div class="hidden sm:flex gap-2">
+        <button aria-label="Previous products" onclick="document.getElementById('featured-track').scrollBy({left:-280,behavior:'smooth'})" class="w-9 h-9 rounded-full border border-brand-200 flex items-center justify-center text-brand-700 hover:bg-brand-50 transition-colors">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button aria-label="Next products" onclick="document.getElementById('featured-track').scrollBy({left:280,behavior:'smooth'})" class="w-9 h-9 rounded-full border border-brand-200 flex items-center justify-center text-brand-700 hover:bg-brand-50 transition-colors">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="featured-track" class="carousel-track flex md:grid md:grid-cols-4 gap-6 overflow-x-auto"></div>
+  </section>
+
+  <!-- ============ ENVIRONMENTAL ACCREDITATIONS ============ -->
+  <section class="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-3 gap-12">
+    <div class="md:col-span-2">
+      <h2 class="font-heading font-bold text-2xl md:text-3xl text-brand-800 mb-4">Environmental Accreditations</h2>
+      <p class="text-sm text-gray-600 max-w-2xl mb-8">Every product we sell is independently assessed against strict environmental standards, from responsible forestry to verified carbon offsetting, so you can serve with a clear conscience.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4" id="accreditations"></div>
+    </div>
+    <aside class="bg-brand-50 rounded-2xl p-7 h-fit">
+      <div class="font-heading font-extrabold text-4xl text-brand-700">4.85</div>
+      <div class="flex gap-1 my-2" id="avg-stars"></div>
+      <p class="text-sm text-gray-600">average rating from over 12,400 verified reviews</p>
+      <div class="mt-6 space-y-2" id="rating-bars"></div>
+    </aside>
+  </section>
+
+  <!-- ============ NEW PRODUCTS ============ -->
+  <section class="bg-brand-50 py-16 border-y border-brand-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-end justify-between mb-8">
+        <h2 class="font-heading font-bold text-2xl md:text-3xl text-brand-800">New Products</h2>
+        <div class="hidden sm:flex gap-2">
+          <button aria-label="Previous new products" onclick="document.getElementById('new-track').scrollBy({left:-280,behavior:'smooth'})" class="w-9 h-9 rounded-full border border-brand-200 bg-white flex items-center justify-center text-brand-700 hover:bg-brand-100 transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button aria-label="Next new products" onclick="document.getElementById('new-track').scrollBy({left:280,behavior:'smooth'})" class="w-9 h-9 rounded-full border border-brand-200 bg-white flex items-center justify-center text-brand-700 hover:bg-brand-100 transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="new-track" class="carousel-track flex md:grid md:grid-cols-4 gap-6 overflow-x-auto"></div>
+    </div>
+  </section>
+
+  <!-- ============ CUSTOMER REVIEWS ============ -->
+  <section class="py-16 border-b border-brand-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-end justify-between mb-8">
+        <h2 class="font-heading font-bold text-2xl md:text-3xl text-brand-800">What Our Customers Say</h2>
+        <div class="hidden sm:flex gap-2">
+          <button aria-label="Previous reviews" onclick="document.getElementById('review-track').scrollBy({left:-320,behavior:'smooth'})" class="w-9 h-9 rounded-full border border-brand-200 bg-white flex items-center justify-center text-brand-700 hover:bg-brand-100 transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button aria-label="Next reviews" onclick="document.getElementById('review-track').scrollBy({left:320,behavior:'smooth'})" class="w-9 h-9 rounded-full border border-brand-200 bg-white flex items-center justify-center text-brand-700 hover:bg-brand-100 transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="review-track" class="carousel-track flex gap-5 overflow-x-auto"></div>
+      <div class="flex justify-center gap-1.5 mt-6" id="review-dots"></div>
+    </div>
+  </section>
+
+  <!-- ============ MOST POPULAR PRODUCTS ============ -->
+  <section class="max-w-7xl mx-auto px-4 py-16">
+    <div class="flex items-end justify-between mb-8">
+      <h2 class="font-heading font-bold text-2xl md:text-3xl text-brand-800">Most Popular Products</h2>
+      <div class="hidden sm:flex gap-2">
+        <button aria-label="Previous popular products" onclick="document.getElementById('popular-track').scrollBy({left:-280,behavior:'smooth'})" class="w-9 h-9 rounded-full border border-brand-200 flex items-center justify-center text-brand-700 hover:bg-brand-50 transition-colors">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button aria-label="Next popular products" onclick="document.getElementById('popular-track').scrollBy({left:280,behavior:'smooth'})" class="w-9 h-9 rounded-full border border-brand-200 flex items-center justify-center text-brand-700 hover:bg-brand-50 transition-colors">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="popular-track" class="carousel-track flex md:grid md:grid-cols-4 gap-6 overflow-x-auto"></div>
+  </section>
+
+  <!-- ============ WHY CHOOSE US (eco-friendly section, new) ============ -->
+  <section class="bg-brand-50 py-16 border-y border-brand-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <h2 class="font-heading font-bold text-2xl md:text-3xl text-brand-800 mb-3">Why Choose Us</h2>
+        <p class="text-sm text-gray-600">What sets our tableware apart, from sourcing to serving.</p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-8" id="why-choose-us"></div>
+    </div>
+  </section>
+
+  <!-- ============ BLOG ============ -->
+  <section class="max-w-7xl mx-auto px-4 py-16">
+    <h2 class="font-heading font-bold text-2xl md:text-3xl text-brand-800 mb-8">Explore Our Blog</h2>
+    <div class="grid md:grid-cols-3 gap-6" id="blog-grid"></div>
+  </section>
+
+</main>
+
+<!-- =========================================================================
+     ROUTE: CATEGORY
+========================================================================= -->
+<main id="page-category" class="route-page hidden">
+  <div class="max-w-7xl mx-auto px-4 py-4 text-sm text-gray-500 flex items-center gap-2 flex-wrap">
+    <a href="#/home" class="hover:text-brand-600 transition-colors">Home</a>
+    <span>/</span>
+    <span id="cat-breadcrumb" class="text-brand-800 font-medium">Category</span>
+  </div>
+  <section class="max-w-7xl mx-auto px-4 pb-16">
+    <h1 id="cat-title" class="font-heading font-bold text-2xl md:text-3xl text-brand-800 mb-3">Category</h1>
+    <p id="cat-intro" class="text-sm text-gray-600 max-w-2xl mb-8"></p>
+    <div id="cat-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6"></div>
+    <div id="cat-empty" class="hidden text-center py-16 text-gray-500">
+      No products in this category yet — check back soon.
+    </div>
+  </section>
+</main>
+
+<!-- =========================================================================
+     ROUTE: PRODUCT
+========================================================================= -->
+<main id="page-product" class="route-page hidden">
+  <div class="max-w-7xl mx-auto px-4 py-4 text-sm text-gray-500 flex items-center gap-2 flex-wrap">
+    <a href="#/home" class="hover:text-brand-600 transition-colors">Home</a>
+    <span>/</span>
+    <a id="pdp-cat-link" href="#" class="hover:text-brand-600 transition-colors">Shop</a>
+    <span>/</span>
+    <span id="pdp-breadcrumb-name" class="text-brand-800 font-medium">Product</span>
+  </div>
+
+  <section class="max-w-7xl mx-auto px-4 pb-16">
+    <div class="grid md:grid-cols-2 gap-10 lg:gap-14">
+
+      <!-- Gallery -->
+      <div>
+        <div class="relative rounded-2xl border border-brand-100 shadow-sm overflow-hidden h-96 flex items-center justify-center bg-white" id="main-image">
+          <span class="absolute top-4 left-4 bg-brand-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full z-10">On Sale</span>
+          <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" id="main-image-bg"></div>
+        </div>
+        <div class="flex gap-3 mt-4" id="thumb-strip"></div>
+      </div>
+
+      <!-- Purchase Panel -->
+      <div>
+        <h1 id="pdp-title" class="font-heading font-bold text-2xl md:text-3xl text-brand-900 leading-snug">Product name</h1>
+
+        <div class="flex items-center gap-3 mt-3">
+          <span class="inline-flex items-center gap-1 bg-brand-50 text-brand-700 text-xs font-semibold px-2.5 py-1 rounded-full">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            In Stock
+          </span>
+          <span id="pdp-category-pill" class="inline-flex items-center gap-1 bg-gray-100 text-gray-600 text-xs font-semibold px-2.5 py-1 rounded-full"></span>
+        </div>
+
+        <div class="flex items-baseline gap-3 mt-5">
+          <span id="pdp-price" class="font-heading font-extrabold text-3xl text-brand-800">$0.00</span>
+          <span id="pdp-regular" class="text-gray-400 line-through text-lg">$0.00</span>
+        </div>
+        <span id="pdp-save" class="text-brand-600 text-sm font-semibold">Save 0%</span>
+        <p id="pdp-unit" class="text-xs text-gray-500 mt-1">$0.00 per unit</p>
+
+        <!-- Description / spec content: populated later; intentionally left blank for now -->
+        <div id="pdp-desc" class="text-sm text-gray-600 mt-5 leading-relaxed max-w-md"></div>
+
+        <!-- Quantity + CTAs -->
+        <div class="flex flex-wrap items-center gap-4 mt-7">
+          <div class="flex items-center border border-brand-200 rounded-full overflow-hidden">
+            <button id="qty-minus" type="button" aria-label="Decrease quantity" class="w-10 h-10 flex items-center justify-center text-brand-700 hover:bg-brand-50 transition-colors text-lg font-bold">&minus;</button>
+            <input id="qty-input" type="number" min="1" value="1" aria-label="Quantity" class="w-12 text-center border-none focus:outline-none text-sm font-semibold">
+            <button id="qty-plus" type="button" aria-label="Increase quantity" class="w-10 h-10 flex items-center justify-center text-brand-700 hover:bg-brand-50 transition-colors text-lg font-bold">+</button>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3 mt-4">
+          <button id="add-to-cart" type="button" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-heading font-semibold py-3.5 rounded-full flex items-center justify-center gap-2 transition-colors">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.5 3h2l2.6 12.2a2 2 0 002 1.6h8.4a2 2 0 002-1.6L21 8H6"/></svg>
+            Add to Cart
+          </button>
+          <button id="buy-now" type="button" class="w-full border-2 border-brand-800 text-brand-800 font-heading font-semibold py-3.5 rounded-full hover:bg-brand-800 hover:text-white transition-colors">Buy Now</button>
+        </div>
+
+        <div class="flex flex-wrap gap-6 mt-6 pt-6 border-t border-brand-100">
+          <div class="flex items-center gap-2 text-xs text-gray-600">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#317236" stroke-width="1.6"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7zM7 20a2 2 0 100-4 2 2 0 000 4zM18 20a2 2 0 100-4 2 2 0 000 4z"/></svg>
+            Free Shipping Above $100
+          </div>
+          <div class="flex items-center gap-2 text-xs text-gray-600">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#317236" stroke-width="1.6"><path d="M4 4v6h6M4 10a8 8 0 1116 0 8 8 0 01-16 0z"/></svg>
+            30-Day Easy Returns
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ TABS ============ -->
+    <div class="mt-16">
+      <div class="flex gap-8 border-b border-brand-100" role="tablist">
+        <button class="tab-btn active pb-3 border-b-2 border-transparent text-sm text-gray-600" data-tab="desc" role="tab">Description</button>
+        <button class="tab-btn pb-3 border-b-2 border-transparent text-sm text-gray-600" data-tab="specs" role="tab">Specifications</button>
+        <button class="tab-btn pb-3 border-b-2 border-transparent text-sm text-gray-600" data-tab="shipping" role="tab">Shipping &amp; Sustainability</button>
+      </div>
+
+      <!-- Content intentionally left blank for now — to be supplied later -->
+      <div id="desc" class="tab-panel active pt-6 text-sm text-gray-700 leading-relaxed max-w-2xl"></div>
+      <div id="specs" class="tab-panel pt-6">
+        <div class="grid sm:grid-cols-2 gap-x-10 gap-y-3 max-w-2xl" id="specs-grid"></div>
+      </div>
+      <div id="shipping" class="tab-panel pt-6 text-sm text-gray-700 leading-relaxed max-w-2xl"></div>
+    </div>
+  </section>
+
+  <!-- ============ SIMILAR PRODUCTS ============ -->
+  <section class="bg-brand-50 py-16 border-y border-brand-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="font-heading font-bold text-2xl md:text-3xl text-brand-800 mb-8">Similar Products</h2>
+      <div id="similar-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6"></div>
+    </div>
+  </section>
+</main>
+
+<!-- =========================================================================
+     ROUTE: CART
+========================================================================= -->
+<main id="page-cart" class="route-page hidden">
+  <div class="border-b border-brand-100 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-6">
+      <div class="flex items-center">
+        <div class="flex flex-col items-center gap-2 flex-1">
+          <div class="w-9 h-9 rounded-full bg-brand-500 text-white flex items-center justify-center font-heading font-bold text-sm">1</div>
+          <span class="text-xs font-semibold text-brand-800 text-center">Shopping Cart</span>
+        </div>
+        <div class="h-0.5 flex-1 bg-brand-100 -mt-6"></div>
+        <div class="flex flex-col items-center gap-2 flex-1">
+          <div class="w-9 h-9 rounded-full bg-brand-100 text-brand-400 flex items-center justify-center font-heading font-bold text-sm">2</div>
+          <span class="text-xs font-medium text-gray-400 text-center">Shipping &amp; Payment</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="max-w-7xl mx-auto px-4 py-10">
+    <div class="grid lg:grid-cols-3 gap-10">
+      <div class="lg:col-span-2">
+        <div class="flex items-center justify-between mb-5 flex-wrap gap-3">
+          <h1 id="cart-heading" class="font-heading font-bold text-xl md:text-2xl text-brand-900">Your Shopping Cart</h1>
+          <a href="#/home" class="inline-flex items-center gap-1.5 text-brand-600 hover:text-brand-700 font-semibold text-sm transition-colors">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+            Continue Shopping
+          </a>
+        </div>
+        <div id="cart-list" class="border border-brand-100 rounded-2xl divide-y divide-brand-100 overflow-hidden bg-white"></div>
+      </div>
+
+      <aside class="lg:col-span-1">
+        <div class="bg-cream rounded-2xl border-t-4 border-brand-500 p-6 sticky top-6">
+          <h2 class="font-heading font-bold text-lg text-brand-900 mb-5">Order Summary</h2>
+          <div class="space-y-2.5 text-sm">
+            <div class="flex justify-between text-gray-600">
+              <span>Subtotal</span>
+              <span id="cart-subtotal">$0.00</span>
+            </div>
+            <div class="flex justify-between text-gray-600">
+              <span>Shipping</span>
+              <span id="cart-shipping">$0.00</span>
+            </div>
+          </div>
+          <p id="cart-shipping-note" class="text-xs text-brand-600 font-medium mt-2"></p>
+          <div class="mt-6 pt-5 border-t border-brand-200 flex items-center justify-between">
+            <span class="font-heading font-semibold text-brand-900">Total</span>
+            <span id="cart-total" class="font-heading font-extrabold text-2xl text-brand-800">$0.00</span>
+          </div>
+          <a href="#/checkout" class="w-full mt-6 bg-brand-500 hover:bg-brand-600 text-white font-heading font-semibold py-3.5 rounded-full flex items-center justify-center gap-2 transition-colors">
+            Proceed to Checkout
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <div class="flex gap-2 mt-5" id="cart-payment-icons"></div>
+          <div class="flex items-center gap-2 mt-4 text-xs text-gray-500">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#317236" stroke-width="1.8"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+            100% Secure Checkout &amp; Encrypted Payment
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<!-- =========================================================================
+     ROUTE: CHECKOUT
+========================================================================= -->
+<main id="page-checkout" class="route-page hidden">
+  <div class="border-b border-brand-100 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-6">
+      <div class="flex items-center">
+        <div class="flex flex-col items-center gap-2 flex-1">
+          <div class="w-9 h-9 rounded-full bg-brand-500 text-white flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <span class="text-xs font-semibold text-brand-800 text-center">Cart</span>
+        </div>
+        <div class="h-0.5 flex-1 bg-brand-500 -mt-6"></div>
+        <div class="flex flex-col items-center gap-2 flex-1">
+          <div class="w-9 h-9 rounded-full bg-brand-500 text-white flex items-center justify-center font-heading font-bold text-sm">2</div>
+          <span class="text-xs font-bold text-brand-800 text-center">Shipping &amp; Payment</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="max-w-7xl mx-auto px-4 py-10">
+    <div class="grid lg:grid-cols-3 gap-10">
+      <div class="lg:col-span-2">
+        <h1 class="font-heading font-bold text-xl md:text-2xl text-brand-900 mb-6">Shipping &amp; Payment</h1>
+        <form id="checkout-form" class="space-y-6">
+          <div>
+            <h2 class="font-heading font-semibold text-brand-900 mb-3">Contact &amp; Shipping</h2>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <input required placeholder="Full Name" class="field-input sm:col-span-2">
+              <input required type="email" placeholder="Email Address" class="field-input sm:col-span-2">
+              <input required placeholder="Street Address" class="field-input sm:col-span-2">
+              <input required placeholder="City" class="field-input">
+              <input required placeholder="State" class="field-input">
+              <input required placeholder="ZIP Code" class="field-input">
+              <input required placeholder="Phone Number" class="field-input">
+            </div>
+          </div>
+
+          <div>
+            <h2 class="font-heading font-semibold text-brand-900 mb-3">Payment Method</h2>
+            <div class="flex gap-4 mb-4">
+              <label class="flex items-center gap-2 text-sm font-medium">
+                <input type="radio" name="payment-method" value="card" class="payment-radio accent-brand-500" checked> Credit / Debit Card
+              </label>
+              <label class="flex items-center gap-2 text-sm font-medium">
+                <input type="radio" name="payment-method" value="paypal" class="payment-radio accent-brand-500"> PayPal
+              </label>
+            </div>
+            <div id="card-panel" class="grid sm:grid-cols-2 gap-3">
+              <input required placeholder="Card Number" class="field-input sm:col-span-2">
+              <input required placeholder="MM / YY" class="field-input">
+              <input required placeholder="CVC" class="field-input">
+            </div>
+            <div id="paypal-panel" class="hidden text-sm text-gray-600 border border-brand-100 rounded-xl p-4">You will be redirected to PayPal to complete your payment.</div>
+          </div>
+
+          <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-heading font-semibold py-3.5 rounded-full transition-colors">Place Order</button>
+          <p id="checkout-confirm" class="hidden text-center text-brand-700 font-semibold text-sm"></p>
+        </form>
+      </div>
+
+      <aside class="lg:col-span-1">
+        <div class="bg-cream rounded-2xl border-t-4 border-brand-500 p-6 sticky top-6">
+          <h2 class="font-heading font-bold text-lg text-brand-900 mb-5">Order Summary</h2>
+          <div id="checkout-items" class="space-y-3 max-h-60 overflow-y-auto pr-1"></div>
+          <div class="space-y-2.5 text-sm mt-5 pt-5 border-t border-brand-200">
+            <div class="flex justify-between text-gray-600"><span>Subtotal</span><span id="ck-subtotal">$0.00</span></div>
+            <div class="flex justify-between text-gray-600"><span>Shipping</span><span id="ck-shipping">$0.00</span></div>
+          </div>
+          <div class="mt-5 pt-5 border-t border-brand-200 flex items-center justify-between">
+            <span class="font-heading font-semibold text-brand-900">Total</span>
+            <span id="ck-total" class="font-heading font-extrabold text-2xl text-brand-800">$0.00</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<!-- =========================================================================
+     ROUTE: MY ACCOUNT
+========================================================================= -->
+<main id="page-account" class="route-page hidden">
+  <div class="max-w-7xl mx-auto px-4 py-4 text-sm text-gray-500 flex items-center gap-2 flex-wrap">
+    <a href="#/home" class="hover:text-brand-600 transition-colors">Home</a>
+    <span>/</span>
+    <span class="text-brand-800 font-medium">My Account</span>
+  </div>
+
+  <section class="max-w-md mx-auto px-4 pb-20">
+    <div class="bg-white rounded-2xl border border-brand-100 shadow-sm p-8">
+
+      <!-- LOGIN VIEW -->
+      <div id="account-login-view">
+        <h1 class="font-heading font-bold text-2xl text-brand-800 text-center mb-6">Login</h1>
+        <form id="login-form" class="space-y-4" novalidate>
+          <div>
+            <label for="login-email" class="text-sm font-semibold text-brand-900 block mb-1">Email</label>
+            <input id="login-email" type="email" required class="field-input">
+          </div>
+          <div>
+            <label for="login-password" class="text-sm font-semibold text-brand-900 block mb-1">Password</label>
+            <input id="login-password" type="password" required minlength="6" class="field-input">
+          </div>
+          <button type="button" id="forgot-password-link" class="text-sm text-brand-600 hover:text-brand-700 font-medium">Forgot Your Password?</button>
+
+          <p class="text-xs text-gray-500 leading-relaxed pt-2 border-t border-brand-100">
+            For issues logging in, contact <a href="mailto:support@imaplant.com" class="text-brand-600 hover:underline">support@imaplant.com</a> or call <a href="tel:+16308333988" class="text-brand-600 hover:underline">+1 (630) 833-3988</a>.
+          </p>
+
+          <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-heading font-semibold py-3 rounded-full transition-colors">Sign In</button>
+          <p id="login-message" class="hidden text-sm text-center font-medium"></p>
+          <p class="text-center text-sm text-gray-600">Don't Have an Account? <button type="button" id="show-create-account" class="text-brand-600 hover:text-brand-700 font-semibold">Create Account</button></p>
+        </form>
+      </div>
+
+      <!-- CREATE ACCOUNT VIEW -->
+      <div id="account-create-view" class="hidden">
+        <h1 class="font-heading font-bold text-2xl text-brand-800 text-center mb-6">Create Account</h1>
+        <form id="create-account-form" class="space-y-4" novalidate>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label for="ca-first" class="text-sm font-semibold text-brand-900 block mb-1">First Name</label>
+              <input id="ca-first" type="text" required class="field-input">
+            </div>
+            <div>
+              <label for="ca-last" class="text-sm font-semibold text-brand-900 block mb-1">Last Name</label>
+              <input id="ca-last" type="text" required class="field-input">
+            </div>
+          </div>
+          <div>
+            <label for="ca-email" class="text-sm font-semibold text-brand-900 block mb-1">Email</label>
+            <input id="ca-email" type="email" required class="field-input">
+          </div>
+          <div>
+            <label for="ca-password" class="text-sm font-semibold text-brand-900 block mb-1">Password</label>
+            <input id="ca-password" type="password" required minlength="6" class="field-input">
+          </div>
+          <div>
+            <label for="ca-confirm" class="text-sm font-semibold text-brand-900 block mb-1">Confirm Password</label>
+            <input id="ca-confirm" type="password" required minlength="6" class="field-input">
+          </div>
+          <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-heading font-semibold py-3 rounded-full transition-colors">Create Account</button>
+          <p id="create-account-message" class="hidden text-sm text-center font-medium"></p>
+          <p class="text-center text-sm text-gray-600">Already have an account? <button type="button" id="show-login" class="text-brand-600 hover:text-brand-700 font-semibold">Log In</button></p>
+        </form>
+      </div>
+
+      <p class="text-xs text-gray-400 text-center mt-6 pt-4 border-t border-brand-100">
+        Need help? <a href="mailto:support@imaplant.com" class="text-brand-600 hover:underline">support@imaplant.com</a> &middot; <a href="tel:+16308333988" class="text-brand-600 hover:underline">+1 (630) 833-3988</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-brand-950 text-brand-100">
+  <div class="max-w-7xl mx-auto px-4 py-14 grid sm:grid-cols-2 md:grid-cols-5 gap-10">
+    <div>
+      <h3 class="font-heading font-semibold text-white mb-4">Info</h3>
+      <ul class="space-y-2 text-sm">
+        <li>I'M A Plant, United States</li>
+        <li>hello@imaplant.com</li>
+        <li>1-800-XXX-XXXX</li>
+        <li>Mon&ndash;Fri, 9am&ndash;5pm</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-heading font-semibold text-white mb-4">Navigate</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Sustainability</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Carbon Calculator</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-heading font-semibold text-white mb-4">Categories</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#/category/plates" class="hover:text-white transition-colors">Plates</a></li>
+        <li><a href="#/category/bowls" class="hover:text-white transition-colors">Bowls</a></li>
+        <li><a href="#/category/clamshells" class="hover:text-white transition-colors">Clamshells</a></li>
+        <li><a href="#/category/meal-trays" class="hover:text-white transition-colors">Meal Trays</a></li>
+        <li><a href="#/category/cups" class="hover:text-white transition-colors">Cups</a></li>
+        <li><a href="#/category/sipper-lids" class="hover:text-white transition-colors">Sipper Lids</a></li>
+        <li><a href="#/category/cutleries" class="hover:text-white transition-colors">Cutleries</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-heading font-semibold text-white mb-4">Useful Pages</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Shipping &amp; Returns</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Order Samples</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-heading font-semibold text-white mb-4">Subscribe to Our Newsletter</h3>
+      <p class="text-sm mb-4">Get restock alerts and seasonal offers straight to your inbox.</p>
+      <form class="flex" onsubmit="event.preventDefault(); this.querySelector('input').value='';">
+        <label for="newsletter-email" class="sr-only">Email address</label>
+        <input id="newsletter-email" type="email" required placeholder="Your email" class="w-full min-w-0 rounded-l-full px-4 py-2.5 text-sm text-ink focus:outline-none">
+        <button type="submit" class="bg-brand-500 hover:bg-brand-400 px-5 rounded-r-full font-semibold text-sm shrink-0 transition-colors">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="border-t border-brand-800">
+    <div class="max-w-7xl mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-brand-300">
+      <p>&copy; 2026 I'M A Plant. All rights reserved.</p>
+      <div class="flex gap-3" id="footer-payment-icons"></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =========================================================================
+   PRODUCT DATA — source of truth from the uploaded product sheet.
+   Prices are USD. All 14 rows were flagged "Sale" in the sheet, so every
+   product shows a regular price + sale price + per-unit price.
+   Images: only 4 products had a matching real photo already in the site
+   (carried over from the earlier build) — the rest use the same neutral
+   placeholder treatment already used elsewhere on the site (no invented
+   photos).
+========================================================================= */
+const CATEGORIES = [
+  { slug: 'bowls', label: 'Bowls', intro: 'Sturdy, compostable bowls sized for salads, sides, and everything in between.' },
+  { slug: 'clamshells', label: 'Clamshells', intro: 'Secure, leak-resistant clamshell containers built for takeout, delivery, and meal prep.' },
+  { slug: 'meal-trays', label: 'Meal Trays', intro: 'Sectioned and single-compartment trays that keep hot and cold foods organized and ready to serve.' },
+  { slug: 'cups', label: 'Cups', intro: 'Insulated ripple-wall cups for hot and cold beverages, sized for cafes, events, and everyday service.' },
+  { slug: 'plates', label: 'Plates', intro: 'Round plates in a range of sizes for casual meals, catering, and large events.' },
+  { slug: 'sipper-lids', label: 'Sipper Lids', intro: 'Compostable sipper lids sized to fit our cup range for secure, mess-free sipping.' },
+  { slug: 'cutleries', label: 'Cutleries', intro: 'Compostable wooden cutlery sets for every meal, from quick bites to full-service catering.' },
+];
+
+const PRODUCTS = [
+  { id: 'plate-10in-10x50',     name: '"IMP" 10" Round Plate 10 sleeves/50ct',                         category: 'plates',                sourceCategory: 'Plate',      regular: 78.36,  sale: 58.77, unit: 0.11, image: null },
+  { id: 'bowl-12oz-20x50',      name: '"IMP" 12 oz Bowl (Sugarcane) 20 sleeves/50ct',                   category: 'bowls',                 sourceCategory: 'Bowls',      regular: 47.12,  sale: 35.34, unit: 0.04, image: null },
+  { id: 'cups-12oz-20x25',      name: '"IMP" 12 OZ Brown Ripple Cups 20 sleeves/25ct (Sugarcane)',      category: 'cups',                  sourceCategory: 'Cups',       regular: 49.51,  sale: 39.61, unit: 0.08, image: null },
+  { id: 'cups-16oz-20x25',      name: '"IMP"16 OZ Brown Ripple Cups 20 sleeves/25ct (Sugarcane)',       category: 'cups',                  sourceCategory: 'Cups',       regular: 62.13,  sale: 49.71, unit: 0.10, image: null },
+  { id: 'mealtray-5cp-10x50',   name: '"IMP" 5 CP Meal Tray (Sugarcane) 10 sleeves/50ct',               category: 'meal-trays',            sourceCategory: 'Meal Tray',  regular: 120.71, sale: 90.53, unit: 0.18, image: null },
+  { id: 'clamshell-6x6-10x50',  name: '"IMP" 6x6 clamshell 10 sleeves/50ct',                            category: 'clamshells',            sourceCategory: 'Clamshell',  regular: 96.80,  sale: 72.60, unit: 0.14, image: null },
+  { id: 'plate-7in-20x50',      name: '"IMP" 7" Round Plate 20 sleeves/50ct',                           category: 'plates',                sourceCategory: 'Plate',      regular: 69.64,  sale: 52.23, unit: 0.05, image: 'https://img1.wsimg.com/isteam/ip/200cdcf6-0e1a-445d-af35-1b80ebe80d3f/IMG_0255.jpeg/:/cr=w:765,h:765,a:cc' },
+  { id: 'cups-8oz-20x25',       name: '"IMP" 8 OZ Brown Ripple Cups 20 sleeves/25ct',                   category: 'cups',                  sourceCategory: 'Cups',       regular: 40.25,  sale: 29.86, unit: 0.06, image: 'https://img1.wsimg.com/isteam/ip/200cdcf6-0e1a-445d-af35-1b80ebe80d3f/image%20222.jpeg/:/cr=w:447,h:447,a:cc' },
+  { id: 'sipperlid-90mm-20x50', name: '"IMP" 90 mm Bagasse Sipper Lids 20 sleeves/50ct',                category: 'sipper-lids',           sourceCategory: 'Sipper Lids',regular: 47.12,  sale: 35.34, unit: 0.04, image: null },
+  { id: 'mealtray-9cp-8x25',    name: '"IMP" 9 CP Round Meal Tray (Sugarcane) 8 Sleeves/25ct',          category: 'meal-trays',            sourceCategory: 'Meal Tray',  regular: 117.00, sale: 87.75, unit: 0.44, image: 'https://img1.wsimg.com/isteam/ip/200cdcf6-0e1a-445d-af35-1b80ebe80d3f/8.jpg/:/cr=w:760,h:760,a:cc' },
+  { id: 'plate-9in-10x50',      name: '"IMP" 9" Round Plate 10 sleeves/50 ct',                          category: 'plates',                sourceCategory: 'Plate',      regular: 58.76,  sale: 44.07, unit: 0.09, image: null },
+  { id: 'clamshell-9x6-5x50',   name: '"IMP" 9x6 clamshell 5 sleeves/50ct',                             category: 'clamshells',            sourceCategory: 'Clamshell',  regular: 70.60,  sale: 52.95, unit: 0.21, image: null },
+  { id: 'clamshell-9x9-4x50',   name: '"IMP" 9x9 clamshell 4 sleeves/50ct',                             category: 'clamshells',            sourceCategory: 'Clamshell',  regular: 79.04,  sale: 59.28, unit: 0.03, image: null },
+  { id: 'cutlery-wooden-10x50', name: '"IMP" Wooden Cutley Set (Sugarcane) 10 Sleeves/50ct',            category: 'cutleries',              sourceCategory: 'Cutleries',  regular: 103.15, sale: 77.36, unit: 0.15, image: 'https://img1.wsimg.com/isteam/ip/200cdcf6-0e1a-445d-af35-1b80ebe80d3f/download.webp/:/cr=w:351,h:351,a:cc' },
+];
+
+// The sheet has no "New" flag, so these curated sets are an editorial choice,
+// not sourced data: Featured = the 4 products with real photos; New / Popular
+// split the remaining 10 for category variety. All 14 always appear on their
+// category page regardless of homepage placement.
+const FEATURED_IDS = ['plate-7in-20x50', 'cups-8oz-20x25', 'mealtray-9cp-8x25', 'cutlery-wooden-10x50'];
+const NEW_IDS       = ['bowl-12oz-20x50', 'sipperlid-90mm-20x50', 'clamshell-6x6-10x50', 'cups-12oz-20x25'];
+const POPULAR_IDS   = ['plate-10in-10x50', 'mealtray-5cp-10x50', 'clamshell-9x6-5x50', 'cups-16oz-20x25'];
+
+const FREE_SHIPPING_THRESHOLD = 100.00;
+const FLAT_SHIPPING = 9.99;
+
+function byId(id) { return PRODUCTS.find(p => p.id === id); }
+function byCategory(slug) { return PRODUCTS.filter(p => p.category === slug); }
+function catMeta(slug) { return CATEGORIES.find(c => c.slug === slug); }
+function usd(n) { return '$' + n.toFixed(2); }
+function savePct(reg, sale) { return Math.round((1 - sale / reg) * 100); }
+
+/* =========================================================================
+   CART (localStorage) — { id, qty }[]
+========================================================================= */
+const CART_KEY = 'imp_cart_v1';
+function getCart() {
+  try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
+  catch (e) { return []; }
+}
+function saveCart(cart) {
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  updateCartBadge();
+}
+function addToCart(id, qty) {
+  qty = qty || 1;
+  const cart = getCart();
+  const existing = cart.find(i => i.id === id);
+  if (existing) existing.qty += qty;
+  else cart.push({ id, qty });
+  saveCart(cart);
+}
+function setQty(id, qty) {
+  let cart = getCart();
+  if (qty <= 0) cart = cart.filter(i => i.id !== id);
+  else { const item = cart.find(i => i.id === id); if (item) item.qty = qty; }
+  saveCart(cart);
+}
+function removeFromCart(id) { setQty(id, 0); }
+function cartLines() {
+  return getCart().map(i => ({ id: i.id, qty: i.qty, product: byId(i.id) })).filter(l => l.product);
+}
+function cartCount() { return getCart().reduce((s, i) => s + i.qty, 0); }
+function cartSubtotal() { return cartLines().reduce((s, l) => s + l.product.sale * l.qty, 0); }
+function cartShipping() {
+  const sub = cartSubtotal();
+  if (sub === 0) return 0;
+  return sub >= FREE_SHIPPING_THRESHOLD ? 0 : FLAT_SHIPPING;
+}
+function updateCartBadge() {
+  const el = document.getElementById('cart-count');
+  if (el) el.textContent = String(cartCount());
+}
+
+/* =========================================================================
+   TOAST
+========================================================================= */
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  document.getElementById('toast-text').textContent = msg;
+  toast.classList.remove('opacity-0', 'translate-y-[-12px]', 'pointer-events-none');
+  toast.classList.add('opacity-100', 'translate-y-0');
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(() => {
+    toast.classList.add('opacity-0', 'translate-y-[-12px]', 'pointer-events-none');
+    toast.classList.remove('opacity-100', 'translate-y-0');
+  }, 2400);
+}
+
+/* =========================================================================
+   SHARED CARD BUILDER (used by featured/new/popular tracks + category grid)
+========================================================================= */
+function productCard(p) {
+  const imgStyle = p.image
+    ? `background-image:url('${p.image}');background-size:cover;background-position:center;`
+    : '';
+  const gradClass = p.image ? '' : 'bg-gradient-to-br from-brand-300 to-brand-500';
+  return `
+  <div class="shrink-0 w-64 md:w-auto bg-white rounded-2xl border border-brand-100 overflow-hidden group">
+    <a href="#/product/${p.id}" class="relative h-44 block ${gradClass}" style="${imgStyle}">
+      <span class="absolute top-3 left-3 bg-brand-500 text-white text-[11px] font-semibold px-2.5 py-1 rounded-full">Sale</span>
+    </a>
+    <div class="p-4">
+      <a href="#/product/${p.id}">
+        <h3 class="font-heading text-sm font-semibold text-brand-900 leading-snug hover:text-brand-600 transition-colors min-h-[2.6em]">${p.name}</h3>
+      </a>
+      <div class="flex items-baseline gap-2 mt-1.5 flex-wrap">
+        <span class="text-brand-600 font-bold">${usd(p.sale)}</span>
+        <span class="text-gray-400 line-through text-xs">${usd(p.regular)}</span>
+      </div>
+      <p class="text-[11px] text-gray-400 mt-0.5">${usd(p.unit)} / unit</p>
+      <div class="flex gap-2 mt-3">
+        <a href="#/product/${p.id}" class="flex-1 text-center text-xs font-semibold border border-brand-500 text-brand-700 hover:bg-brand-50 px-3 py-1.5 rounded-full transition-colors">View</a>
+        <button type="button" class="quick-add flex-1 text-xs font-semibold bg-brand-500 hover:bg-brand-600 text-white px-3 py-1.5 rounded-full transition-colors" data-id="${p.id}">Add to Cart</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* =========================================================================
+   ROUTER
+========================================================================= */
+function route() {
+  const hash = location.hash || '#/home';
+  const parts = hash.replace(/^#\//, '').split('/');
+
+  document.querySelectorAll('.route-page').forEach(el => el.classList.add('hidden'));
+
+  if (parts[0] === 'category' && parts[1]) {
+    renderCategory(parts[1]);
+    document.getElementById('page-category').classList.remove('hidden');
+  } else if (parts[0] === 'product' && parts[1]) {
+    renderProduct(parts[1]);
+    document.getElementById('page-product').classList.remove('hidden');
+  } else if (parts[0] === 'cart') {
+    renderCart();
+    document.getElementById('page-cart').classList.remove('hidden');
+  } else if (parts[0] === 'checkout') {
+    renderCheckout();
+    document.getElementById('page-checkout').classList.remove('hidden');
+  } else if (parts[0] === 'account') {
+    renderAccount();
+    document.getElementById('page-account').classList.remove('hidden');
+  } else {
+    document.getElementById('page-home').classList.remove('hidden');
+  }
+  updateCartBadge();
+  window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', route);
+
+/* =========================================================================
+   RENDER: CATEGORY PAGE
+========================================================================= */
+function renderCategory(slug) {
+  const meta = catMeta(slug);
+  const products = byCategory(slug);
+  document.getElementById('cat-breadcrumb').textContent = meta ? meta.label : 'Category';
+  document.getElementById('cat-title').textContent = meta ? meta.label : 'Category';
+  document.getElementById('cat-intro').textContent = meta ? meta.intro : '';
+  const grid = document.getElementById('cat-grid');
+  const empty = document.getElementById('cat-empty');
+  if (products.length === 0) {
+    grid.innerHTML = '';
+    empty.classList.remove('hidden');
+  } else {
+    empty.classList.add('hidden');
+    grid.innerHTML = products.map(productCard).join('');
+  }
+}
+
+/* =========================================================================
+   RENDER: PRODUCT PAGE
+========================================================================= */
+function renderProduct(id) {
+  const p = byId(id);
+  if (!p) { location.hash = '#/home'; return; }
+  const meta = catMeta(p.category);
+
+  document.getElementById('pdp-breadcrumb-name').textContent = p.name;
+  document.getElementById('pdp-cat-link').textContent = meta ? meta.label : 'Shop';
+  document.getElementById('pdp-cat-link').href = '#/category/' + p.category;
+  document.getElementById('pdp-title').textContent = p.name;
+  document.getElementById('pdp-category-pill').textContent = p.sourceCategory;
+  document.getElementById('pdp-price').textContent = usd(p.sale);
+  document.getElementById('pdp-regular').textContent = usd(p.regular);
+  document.getElementById('pdp-save').textContent = 'Save ' + savePct(p.regular, p.sale) + '%';
+  document.getElementById('pdp-unit').textContent = usd(p.unit) + ' per unit';
+
+  // description / spec tabs intentionally left blank — content to be supplied later
+  document.getElementById('desc').innerHTML = '';
+  document.getElementById('specs-grid').innerHTML = '';
+  document.getElementById('shipping').innerHTML = '';
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(pn => pn.classList.remove('active'));
+  document.querySelector('.tab-btn[data-tab="desc"]').classList.add('active');
+  document.getElementById('desc').classList.add('active');
+
+  // gallery
+  const mainBg = document.getElementById('main-image-bg');
+  const thumbStrip = document.getElementById('thumb-strip');
+  if (p.image) {
+    mainBg.style.backgroundImage = `url('${p.image}')`;
+    mainBg.style.backgroundSize = 'cover';
+    mainBg.style.backgroundPosition = 'center';
+    mainBg.parentElement.classList.remove('bg-gradient-to-br', 'from-brand-300', 'to-brand-500');
+    thumbStrip.innerHTML = `<button type="button" class="w-20 h-20 rounded-xl border-2 border-brand-500 ring-2 ring-brand-500 overflow-hidden bg-cover bg-center" style="background-image:url('${p.image}')"></button>`;
+  } else {
+    mainBg.style.backgroundImage = '';
+    mainBg.parentElement.classList.add('bg-gradient-to-br', 'from-brand-300', 'to-brand-500');
+    thumbStrip.innerHTML = '';
+  }
+
+  // quantity reset
+  const qtyInput = document.getElementById('qty-input');
+  qtyInput.value = 1;
+  document.getElementById('qty-minus').onclick = () => { qtyInput.value = Math.max(1, Number(qtyInput.value) - 1); };
+  document.getElementById('qty-plus').onclick = () => { qtyInput.value = Number(qtyInput.value) + 1; };
+  qtyInput.onchange = () => { if (!qtyInput.value || Number(qtyInput.value) < 1) qtyInput.value = 1; };
+
+  document.getElementById('add-to-cart').onclick = () => {
+    addToCart(p.id, Number(qtyInput.value));
+    showToast('Item added to cart!');
+  };
+  document.getElementById('buy-now').onclick = () => {
+    addToCart(p.id, Number(qtyInput.value));
+    location.hash = '#/checkout';
+  };
+
+  // similar products
+  const similar = byCategory(p.category).filter(x => x.id !== p.id).slice(0, 4);
+  document.getElementById('similar-grid').innerHTML = similar.map(productCard).join('');
+}
+
+/* =========================================================================
+   RENDER: CART PAGE
+========================================================================= */
+function renderCart() {
+  const lines = cartLines();
+  const list = document.getElementById('cart-list');
+  document.getElementById('cart-heading').textContent = `Your Shopping Cart (${cartCount()} Item${cartCount() === 1 ? '' : 's'})`;
+
+  if (lines.length === 0) {
+    list.innerHTML = `
+      <div class="p-12 text-center">
+        <p class="text-gray-500 mb-4">Your cart is empty.</p>
+        <a href="#/home" class="inline-block bg-brand-500 hover:bg-brand-600 text-white font-semibold px-6 py-2.5 rounded-full transition-colors">Start Shopping</a>
+      </div>`;
+  } else {
+    list.innerHTML = lines.map(l => {
+      const p = l.product;
+      const imgStyle = p.image ? `background-image:url('${p.image}');background-size:cover;background-position:center;` : '';
+      const gradClass = p.image ? '' : 'bg-gradient-to-br from-brand-300 to-brand-500';
+      return `
+      <div class="flex flex-col sm:flex-row sm:items-center gap-4 p-5" data-id="${p.id}">
+        <a href="#/product/${p.id}" class="w-20 h-20 rounded-xl border border-brand-100 shrink-0 ${gradClass}" style="${imgStyle}"></a>
+        <div class="flex-1 min-w-0">
+          <h3 class="font-heading font-semibold text-sm text-brand-900 leading-snug">${p.name}</h3>
+          <p class="text-xs text-brand-600 font-semibold mt-1 flex items-center gap-1">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            In Stock
+          </p>
+        </div>
+        <div class="text-sm text-gray-600 sm:w-24 shrink-0">${usd(p.sale)}</div>
+        <div class="flex items-center border border-brand-200 rounded-full overflow-hidden shrink-0">
+          <button type="button" class="cart-qty-minus w-8 h-8 flex items-center justify-center text-brand-700 hover:bg-brand-50 transition-colors font-bold" data-id="${p.id}">&minus;</button>
+          <input type="number" min="1" value="${l.qty}" aria-label="Quantity" class="cart-qty-input w-10 text-center border-none focus:outline-none text-sm font-semibold" data-id="${p.id}">
+          <button type="button" class="cart-qty-plus w-8 h-8 flex items-center justify-center text-brand-700 hover:bg-brand-50 transition-colors font-bold" data-id="${p.id}">+</button>
+        </div>
+        <div class="font-heading font-bold text-brand-800 sm:w-24 sm:text-right shrink-0">${usd(p.sale * l.qty)}</div>
+        <button type="button" class="cart-remove shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors" data-id="${p.id}" aria-label="Remove item">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6h14z"/></svg>
+        </button>
+      </div>`;
+    }).join('');
+  }
+
+  const sub = cartSubtotal();
+  const ship = cartShipping();
+  document.getElementById('cart-subtotal').textContent = usd(sub);
+  document.getElementById('cart-shipping').textContent = sub === 0 ? usd(0) : (ship === 0 ? 'FREE' : usd(ship));
+  document.getElementById('cart-total').textContent = usd(sub + ship);
+  document.getElementById('cart-shipping-note').textContent = sub > 0 && sub < FREE_SHIPPING_THRESHOLD
+    ? `Add ${usd(FREE_SHIPPING_THRESHOLD - sub)} more for free shipping.`
+    : (sub >= FREE_SHIPPING_THRESHOLD ? "You've unlocked free shipping!" : '');
+
+  document.getElementById('cart-payment-icons').innerHTML = paymentIconsHTML('border-brand-300 text-brand-700');
+
+  list.querySelectorAll('.cart-qty-minus').forEach(btn => btn.onclick = () => {
+    const id = btn.dataset.id;
+    const line = lines.find(l => l.id === id);
+    setQty(id, Math.max(1, line.qty - 1));
+    renderCart();
+  });
+  list.querySelectorAll('.cart-qty-plus').forEach(btn => btn.onclick = () => {
+    const id = btn.dataset.id;
+    const line = lines.find(l => l.id === id);
+    setQty(id, line.qty + 1);
+    renderCart();
+  });
+  list.querySelectorAll('.cart-qty-input').forEach(inp => inp.onchange = () => {
+    const val = Math.max(1, parseInt(inp.value) || 1);
+    setQty(inp.dataset.id, val);
+    renderCart();
+  });
+  list.querySelectorAll('.cart-remove').forEach(btn => btn.onclick = () => {
+    removeFromCart(btn.dataset.id);
+    renderCart();
+  });
+}
+
+/* =========================================================================
+   RENDER: CHECKOUT PAGE
+========================================================================= */
+function renderCheckout() {
+  const lines = cartLines();
+  const itemsEl = document.getElementById('checkout-items');
+  itemsEl.innerHTML = lines.map(l => {
+    const p = l.product;
+    const imgStyle = p.image ? `background-image:url('${p.image}');background-size:cover;background-position:center;` : '';
+    const gradClass = p.image ? '' : 'bg-gradient-to-br from-brand-300 to-brand-500';
+    return `
+    <div class="flex items-center gap-3">
+      <div class="w-14 h-14 rounded-lg border border-brand-200 shrink-0 ${gradClass}" style="${imgStyle}"></div>
+      <div class="flex-1 min-w-0">
+        <p class="text-sm font-semibold text-brand-900 leading-snug truncate">${p.name}</p>
+        <p class="text-xs text-gray-500">Qty ${l.qty}</p>
+      </div>
+      <span class="text-sm font-semibold text-brand-800 shrink-0">${usd(p.sale * l.qty)}</span>
+    </div>`;
+  }).join('') || '<p class="text-sm text-gray-500">Your cart is empty.</p>';
+
+  const sub = cartSubtotal();
+  const ship = cartShipping();
+  document.getElementById('ck-subtotal').textContent = usd(sub);
+  document.getElementById('ck-shipping').textContent = ship === 0 ? 'FREE' : usd(ship);
+  document.getElementById('ck-total').textContent = usd(sub + ship);
+
+  document.getElementById('checkout-confirm').classList.add('hidden');
+  const form = document.getElementById('checkout-form');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  submitBtn.textContent = 'Place Order';
+  submitBtn.disabled = false;
+  submitBtn.classList.remove('opacity-70');
+}
+
+const cardPanel = document.getElementById('card-panel');
+const paypalPanel = document.getElementById('paypal-panel');
+document.querySelectorAll('.payment-radio').forEach(radio => {
+  radio.addEventListener('change', () => {
+    if (radio.value === 'card') { cardPanel.classList.remove('hidden'); paypalPanel.classList.add('hidden'); }
+    else { cardPanel.classList.add('hidden'); paypalPanel.classList.remove('hidden'); }
+  });
+});
+
+document.getElementById('checkout-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const paymentMethod = form.querySelector('input[name="payment-method"]:checked').value;
+  let valid = true;
+  form.querySelectorAll('input[required]').forEach(field => {
+    if (paymentMethod === 'paypal' && cardPanel.contains(field)) { field.classList.remove('field-error'); return; }
+    if (!field.checkValidity()) { field.classList.add('field-error'); valid = false; }
+    else field.classList.remove('field-error');
+  });
+  if (!valid) return;
+
+  const submitBtn = form.querySelector('button[type="submit"]');
+  submitBtn.textContent = 'Processing...';
+  submitBtn.disabled = true;
+  submitBtn.classList.add('opacity-70');
+
+  setTimeout(() => {
+    submitBtn.textContent = 'Order Placed ✓';
+    const confirm = document.getElementById('checkout-confirm');
+    confirm.textContent = "Thank you! Your order has been placed.";
+    confirm.classList.remove('hidden');
+    saveCart([]);
+    setTimeout(() => { location.hash = '#/home'; }, 1800);
+  }, 1000);
+});
+
+/* =========================================================================
+   RENDER + LOGIC: MY ACCOUNT (front-end only — no backend/auth system)
+========================================================================= */
+function showAccountView(view) {
+  document.getElementById('account-login-view').classList.toggle('hidden', view !== 'login');
+  document.getElementById('account-create-view').classList.toggle('hidden', view !== 'create');
+}
+
+function renderAccount() {
+  showAccountView('login');
+  ['login-form', 'create-account-form'].forEach(id => {
+    const form = document.getElementById(id);
+    form.reset();
+    form.querySelectorAll('.field-error').forEach(f => f.classList.remove('field-error'));
+  });
+  const loginMsg = document.getElementById('login-message');
+  loginMsg.className = 'hidden text-sm text-center font-medium';
+  const createMsg = document.getElementById('create-account-message');
+  createMsg.className = 'hidden text-sm text-center font-medium';
+}
+
+document.getElementById('show-create-account').addEventListener('click', () => showAccountView('create'));
+document.getElementById('show-login').addEventListener('click', () => showAccountView('login'));
+
+document.getElementById('forgot-password-link').addEventListener('click', () => {
+  const emailField = document.getElementById('login-email');
+  const msg = document.getElementById('login-message');
+  if (!emailField.checkValidity()) {
+    emailField.classList.add('field-error');
+    msg.textContent = 'Enter your email address above first.';
+    msg.className = 'text-sm text-center font-medium text-red-500';
+    return;
+  }
+  emailField.classList.remove('field-error');
+  msg.textContent = "If an account exists for that email, we've sent password reset instructions.";
+  msg.className = 'text-sm text-center font-medium text-brand-600';
+});
+
+document.getElementById('login-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const msg = document.getElementById('login-message');
+  let valid = true;
+  form.querySelectorAll('input[required]').forEach(field => {
+    if (!field.checkValidity()) { field.classList.add('field-error'); valid = false; }
+    else field.classList.remove('field-error');
+  });
+  if (!valid) {
+    msg.textContent = 'Please check the highlighted fields.';
+    msg.className = 'text-sm text-center font-medium text-red-500';
+    return;
+  }
+  const submitBtn = form.querySelector('button[type="submit"]');
+  submitBtn.disabled = true;
+  submitBtn.classList.add('opacity-70');
+  msg.textContent = 'Signing in...';
+  msg.className = 'text-sm text-center font-medium text-gray-500';
+  setTimeout(() => {
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('opacity-70');
+    msg.textContent = 'Signed in successfully! Redirecting...';
+    msg.className = 'text-sm text-center font-medium text-brand-600';
+    setTimeout(() => { location.hash = '#/home'; }, 1200);
+  }, 700);
+});
+
+document.getElementById('create-account-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const msg = document.getElementById('create-account-message');
+  const password = document.getElementById('ca-password');
+  const confirmPw = document.getElementById('ca-confirm');
+  let valid = true;
+  form.querySelectorAll('input[required]').forEach(field => {
+    if (!field.checkValidity()) { field.classList.add('field-error'); valid = false; }
+    else field.classList.remove('field-error');
+  });
+  if (valid && password.value !== confirmPw.value) {
+    confirmPw.classList.add('field-error');
+    valid = false;
+  }
+  if (!valid) {
+    msg.textContent = password.value !== confirmPw.value ? 'Passwords do not match.' : 'Please check the highlighted fields.';
+    msg.className = 'text-sm text-center font-medium text-red-500';
+    return;
+  }
+  const submitBtn = form.querySelector('button[type="submit"]');
+  submitBtn.disabled = true;
+  submitBtn.classList.add('opacity-70');
+  msg.textContent = 'Creating account...';
+  msg.className = 'text-sm text-center font-medium text-gray-500';
+  setTimeout(() => {
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('opacity-70');
+    msg.textContent = 'Account created! You can now sign in.';
+    msg.className = 'text-sm text-center font-medium text-brand-600';
+    setTimeout(() => { showAccountView('login'); }, 1400);
+  }, 700);
+});
+
+/* =========================================================================
+   GLOBAL QUICK-ADD (event delegation — works on any rendered card)
+========================================================================= */
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.quick-add');
+  if (!btn) return;
+  addToCart(btn.dataset.id, 1);
+  showToast('Item added to cart!');
+});
+
+/* =========================================================================
+   HOME PAGE CONTENT (rendered once — static across route changes)
+========================================================================= */
+function starSVG(cls) {
+  return `<svg class="${cls}" width="14" height="14" viewBox="0 0 24 24" fill="#5CA52A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>`;
+}
+function stars(n) { return `<div class="flex gap-0.5">${Array.from({length:5}).map((_,i)=>starSVG(i<n?'':'opacity-25')).join('')}</div>`; }
+
+document.getElementById('featured-track').innerHTML = FEATURED_IDS.map(id => productCard(byId(id))).join('');
+document.getElementById('new-track').innerHTML = NEW_IDS.map(id => productCard(byId(id))).join('');
+document.getElementById('popular-track').innerHTML = POPULAR_IDS.map(id => productCard(byId(id))).join('');
+
+const services = [
+  {title:'Free shipping above $100.', icon:'M3 7h11v10H3zM14 10h4l3 3v4h-7zM7 20a2 2 0 100-4 2 2 0 000 4zM18 20a2 2 0 100-4 2 2 0 000 4z'},
+  {title:'Satisfied or Refunded', icon:'M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z'},
+  {title:'Friendly Customer Service', icon:'M20 15a2 2 0 01-2 2H8l-4 4V5a2 2 0 012-2h12a2 2 0 012 2v10z'},
+  {title:'100% Secure Payments', icon:'M12 2l7 4v6c0 5-3.4 8.4-7 10-3.6-1.6-7-5-7-10V6l7-4z'},
+];
+document.getElementById('service-bar').innerHTML = services.map(s => `
+  <div class="flex flex-col items-center text-center gap-3">
+    <div class="w-12 h-12 rounded-full bg-white border border-brand-200 flex items-center justify-center">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5CA52A" stroke-width="1.6"><path d="${s.icon}"/></svg>
+    </div>
+    <span class="text-xs md:text-sm font-semibold text-brand-800">${s.title}</span>
+  </div>`).join('');
+
+const accreditations = ['FSC Certified', 'Carbon Neutral', 'Plastic Free', 'Compostable'];
+document.getElementById('accreditations').innerHTML = accreditations.map(a => `
+  <div class="border border-brand-200 rounded-xl h-24 flex flex-col items-center justify-center gap-2 bg-white">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5CA52A" stroke-width="1.6"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+    <span class="text-[11px] font-semibold text-brand-800 text-center px-2">${a}</span>
+  </div>`).join('');
+
+document.getElementById('avg-stars').innerHTML = stars(5);
+const ratingBreakdown = [{label:'5 star', pct:82},{label:'4 star', pct:12},{label:'3 star', pct:4},{label:'2 star', pct:1},{label:'1 star', pct:1}];
+document.getElementById('rating-bars').innerHTML = ratingBreakdown.map(r => `
+  <div class="flex items-center gap-2 text-xs text-gray-600">
+    <span class="w-10 shrink-0">${r.label}</span>
+    <div class="flex-1 h-2 bg-brand-100 rounded-full overflow-hidden"><div class="h-full bg-brand-500" style="width:${r.pct}%"></div></div>
+    <span class="w-8 text-right">${r.pct}%</span>
+  </div>`).join('');
+
+const reviews = [
+  {name:'Hannah W.', date:'12 Aug 2026', text:'The palm leaf plates held up brilliantly at our garden party — sturdy, biodegradable and genuinely nice to look at.', rating:5},
+  {name:'Tom R.', date:'3 Aug 2026', text:'Ordered a sample pack first and was so impressed I switched our whole cafe over to their bagasse bowls.', rating:5},
+  {name:'Priya S.', date:'28 Jul 2026', text:'Delivery was next day as promised and the packaging itself was fully recyclable. Small details that matter.', rating:4},
+  {name:'Daniel K.', date:'19 Jul 2026', text:'Great value for a large event — the cutlery sets didn\u2019t feel flimsy at all, unlike other compostable brands.', rating:5},
+];
+document.getElementById('review-track').innerHTML = reviews.map(r => `
+  <div class="shrink-0 w-80 bg-white rounded-2xl border border-brand-100 p-6">
+    ${stars(r.rating)}
+    <p class="text-sm text-gray-700 mt-3 leading-relaxed">${r.text}</p>
+    <div class="flex items-center gap-2 mt-4">
+      <span class="text-sm font-semibold text-brand-900">${r.name}</span>
+      <span class="text-[10px] bg-brand-100 text-brand-700 font-semibold px-2 py-0.5 rounded-full">Verified Customer</span>
+    </div>
+    <span class="text-xs text-gray-400">${r.date}</span>
+  </div>`).join('');
+document.getElementById('review-dots').innerHTML = reviews.map((_,i) => `<span class="w-2 h-2 rounded-full ${i===0?'bg-brand-600':'bg-brand-200'}"></span>`).join('');
+
+const whyChooseUs = [
+  { title: 'Eco-Friendly Choice', text: 'Thoughtfully designed products that help reduce environmental impact while offering convenience for your everyday needs.', icon: 'M12 21C7 17 4 13.5 4 9.5A5.5 5.5 0 0112 5a5.5 5.5 0 018 4.5c0 4-3 7.5-8 11.5z' },
+  { title: 'Plant-Based Products', text: 'Made from renewable plant-based materials, offering a more sustainable alternative to traditional disposable products.', icon: 'M12 22V12M12 12C12 7 9 4 4 4c0 5 3 8 8 8zM12 12c0-5 3-8 8-8 0 5-3 8-8 8z' },
+  { title: 'Reliable & Sustainable', text: 'Strong, practical, and dependable products designed to deliver quality performance while supporting a greener future.', icon: 'M12 2l7 4v6c0 5-3.4 8.4-7 10-3.6-1.6-7-5-7-10V6l7-4z' },
+];
+document.getElementById('why-choose-us').innerHTML = whyChooseUs.map(w => `
+  <div class="bg-white rounded-2xl border border-brand-100 p-7 text-center">
+    <div class="w-14 h-14 mx-auto rounded-full bg-brand-50 border border-brand-200 flex items-center justify-center mb-4">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5CA52A" stroke-width="1.6"><path d="${w.icon}"/></svg>
+    </div>
+    <h3 class="font-heading font-bold text-brand-900 mb-2">${w.title}</h3>
+    <p class="text-sm text-gray-600 leading-relaxed">${w.text}</p>
+  </div>`).join('');
+
+const blogPosts = [
+  {title:'How to Serve Hot & Greasy Foods Sustainably', grad:'from-brand-400 to-brand-600'},
+  {title:'A Guide to Composting Your Tableware at Home', grad:'from-brand-300 to-brand-500'},
+  {title:'Planning a Zero-Waste Summer Party', grad:'from-brand-500 to-brand-700'},
+];
+document.getElementById('blog-grid').innerHTML = blogPosts.map(b => `
+  <a href="#" class="group">
+    <div class="h-48 rounded-2xl bg-gradient-to-br ${b.grad} mb-4"></div>
+    <h3 class="font-heading font-semibold text-brand-900 group-hover:text-brand-600 transition-colors">${b.title}</h3>
+  </a>`).join('');
+
+function paymentIconsHTML(cls) {
+  const payments = ['VISA', 'MC', 'PayPal', 'Apple Pay', 'Google Pay'];
+  return payments.map(p => `<span class="border ${cls} rounded px-2 py-1 text-[10px] font-semibold bg-white">${p}</span>`).join('');
+}
+document.getElementById('footer-payment-icons').innerHTML = ['VISA','MC','PayPal','Apple Pay','Google Pay'].map(p => `
+  <span class="border border-brand-700 rounded px-2 py-1 text-[10px] font-semibold text-brand-200">${p}</span>`).join('');
+
+/* ---------- tabs (product page) ---------- */
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(pn => pn.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+  });
+});
+
+/* ---------- mobile menu ---------- */
+const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+const mobileSecondaryNav = document.getElementById('mobile-secondary-nav');
+if (mobileMenuToggle && mobileSecondaryNav) {
+  mobileMenuToggle.addEventListener('click', () => mobileSecondaryNav.classList.toggle('hidden'));
+  mobileSecondaryNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileSecondaryNav.classList.add('hidden')));
+}
+
+/* ---------- init ---------- */
+updateCartBadge();
+route();
+</script>
+</body>
+</html>
